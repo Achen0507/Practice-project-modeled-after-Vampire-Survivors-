@@ -2,7 +2,6 @@ using Survivor.Core;
 using Survivor.Data;
 using Survivor.MainMenu;
 using Survivor.Pickups;
-using Survivor.Player;
 using UnityEngine;
 
 namespace Survivor.Enemy
@@ -19,12 +18,13 @@ namespace Survivor.Enemy
         [SerializeField] private float goldDropChance = 0.5f;
 
         private float currentHealth;
-        private bool isAlive = true; 
+        private bool isAlive = true;
+        private bool isOverlappingPlayer = false;
+
         private Transform playerTransform;
         private SpriteRenderer spriteRenderer;
         private Animator animator;
 
-        private bool isOverlappingPlayer = false;
         public Transform Transform => transform;
         public bool IsAlive => isAlive;
 
@@ -71,17 +71,14 @@ namespace Survivor.Enemy
             currentHealth = data.baseHealth;
             isAlive = true;
 
-            // 设置视觉
             if (spriteRenderer != null && data.sprite != null)
                 spriteRenderer.sprite = data.sprite;
 
-            // 恢复动画控制器
             if (animator != null && data.animatorController != null)
             {
                 animator.runtimeAnimatorController = data.animatorController;
                 animator.enabled = true;
             }
-
 
             // 判断是否是 精英怪，Boss（血量 > 100 或经验 > 50）
             bool isBoss = data.baseHealth > 100 || data.expValue > 50;
@@ -92,18 +89,16 @@ namespace Survivor.Enemy
                 transform.localScale = Vector3.one * 2.5f;
                 if (spriteRenderer != null)
                 {
-                    spriteRenderer.color = new Color(1f, 0.5f, 0.5f); // 淡红色
+                    spriteRenderer.color = new Color(1f, 0.5f, 0.5f);
                 }
             }
             else
             {
-                // 普通敌人
                 transform.localScale = Vector3.one;
                 if (spriteRenderer != null)
                     spriteRenderer.color = Color.white;
             }
 
-            // 启用碰撞器
             if (GetComponent<Collider2D>() != null)
                 GetComponent<Collider2D>().enabled = true;
         }
@@ -183,8 +178,6 @@ namespace Survivor.Enemy
             if (playerTransform != null)
             {
                 Vector2 direction = (playerTransform.position - transform.position).normalized;
-
-                // 始终移动
                 transform.Translate(direction * data.baseSpeed * Time.deltaTime, Space.World);
 
                 if (animator != null)
@@ -192,10 +185,8 @@ namespace Survivor.Enemy
                     animator.SetBool("IsMoving", true);
                 }
 
-                // 翻转：只有当不重叠或者方向改变时才翻转
                 if (spriteRenderer != null)
                 {
-                    // 如果重叠，保持当前翻转不变
                     if (!isOverlappingPlayer)
                     {
                         bool shouldFlip = direction.x < 0;
