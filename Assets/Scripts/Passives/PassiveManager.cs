@@ -5,6 +5,10 @@ using UnityEngine;
 
 namespace Survivor.Passives
 {
+    /// <summary>
+    /// 管理局内Passive
+    /// </summary>
+    
     public class PassiveManager : MonoBehaviour
     {
         public static PassiveManager Instance { get; private set; }
@@ -36,13 +40,12 @@ namespace Survivor.Passives
                 existing.LevelUp();
                 float newValue = existing.GetCurrentValue();
                 increment = newValue - oldValue;
-                Debug.Log($"被动升级: {data.passiveName} -> Lv.{existing.level}");
             }
             else{
                 passives.Add(new PassiveInstance(data));
                 increment = data.baseValue;
 
-                // 解锁收藏
+                // 解锁武器收藏
                 CollectionItem item = GetCollectionItemForPassive(data);
                 if (item != null)
                 {
