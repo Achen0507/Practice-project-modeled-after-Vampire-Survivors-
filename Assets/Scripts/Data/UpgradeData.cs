@@ -5,6 +5,7 @@ namespace Survivor.Data
     /// <summary>
     /// 升级配置数据（武器升级和被动技能共用）
     /// </summary>
+    
     [CreateAssetMenu(fileName = "New Upgrade", menuName = "Survivor/Upgrade Data")]
     public class UpgradeData : ScriptableObject
     {
@@ -18,7 +19,7 @@ namespace Survivor.Data
         public int maxLevel;
         public int[] costPerLevel; //每级花费
         public StatType statType;      // 对应 switch 里的类型
-        public bool isPercentage;      // 对应 isPercentage
+        public bool isPercentage;      
         public float baseValue;        // 每级增加的值
 
         [Header("升级类型")]
@@ -27,7 +28,7 @@ namespace Survivor.Data
         [Header("武器关联")]
         public string relatedWeaponName;
 
-        [Header("被动技能")]
+        [Header("被动关联")]
         public string relatedPassiveName;
 
         [Header("属性加成")]
@@ -43,15 +44,15 @@ namespace Survivor.Data
     }
 
     public enum UpgradeType {
-        WeaponUpgrade,      // 武器升级
-        PassiveStat,         // 属性升级（直接加数值）
-        PassiveSkill      // 被动技能（有等级，可多次升级）
+        WeaponUpgrade,      
+        PassiveStat,         // 局外购买的永久被动
+        PassiveSkill      // 游戏内的被动
     }
 
     [System.Serializable]
     public struct StatModifier {
         public StatType statType;
-        public float value;          // 加成数值
+        public float value;          
         public bool isPercentage;    // true=百分比, false=固定值
     }
 
