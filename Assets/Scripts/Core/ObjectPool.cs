@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +5,8 @@ namespace Survivor.Core
 {
     /// <summary>
     /// 通用对象池 - 管理需要频繁创建销毁的对象
-    /// 用法：ObjectPool.Instance.Get("Bullet", position, rotation);
     /// </summary>
+    
     public class ObjectPool : MonoBehaviour
     {
         public static ObjectPool Instance { get; private set; }
@@ -15,7 +14,7 @@ namespace Survivor.Core
         [System.Serializable]
         public class PoolEntry
         {
-            public string key;              // 唯一标识，如 "Bullet", "Enemy_Slime"
+            public string key;              // 唯一标识，如 "Bullet", "Enemy"
             public GameObject prefab;       // 原始预制体
             public int prewarmAmount = 10;  // 预热数量
             public bool expandable = true;  // 不够用时是否自动扩容
@@ -94,7 +93,7 @@ namespace Survivor.Core
             
             if (queue.Count > 0)
             {
-                obj = queue.Dequeue();// 从队列头部取出一个
+                obj = queue.Dequeue();
             }
             else
             {
@@ -109,8 +108,7 @@ namespace Survivor.Core
                     Debug.LogWarning($"对象池 [{key}] 已空且不允许扩容");
                     return null;
                 }
-            }
-            
+            }    
             obj.transform.position = position;
             obj.transform.rotation = rotation;
             obj.SetActive(true);
