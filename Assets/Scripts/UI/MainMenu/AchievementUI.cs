@@ -1,12 +1,13 @@
 using Survivor.UI;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 namespace Survivor.MainMenu
 {
+    /// <summary>
+    /// 成就页面
+    /// </summary>
     public class AchievementUI : MonoBehaviour
     {
         [Header("面板")]
@@ -49,7 +50,9 @@ namespace Survivor.MainMenu
             backButton.gameObject.SetActive(true);
 
             recordPanel.SetActive(true);
+
             RefreshList();
+
             UpdateTitle();
         }
 
