@@ -1,6 +1,5 @@
 using Survivor.Core;
 using Survivor.Data;
-using Survivor.MainMenu;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -85,7 +84,6 @@ namespace Survivor.MainMenu
 
         public void Upgrade(UpgradeData upgrade)
         {
-            Debug.Log($"Upgrade 被调用: {upgrade.upgradeName}");
             if (!CanUpgrade(upgrade)) return;
 
             int level = GetLevel(upgrade);
@@ -97,7 +95,6 @@ namespace Survivor.MainMenu
 
             levels[upgrade] = level + 1;
 
-            // 传入增量（每级固定增加 baseValue）
             PlayerAttributes.Instance.ApplyStatModifier(upgrade.statType, upgrade.baseValue, upgrade.isPercentage);
 
             SaveProgress();
