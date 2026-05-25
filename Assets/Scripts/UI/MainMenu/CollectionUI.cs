@@ -1,5 +1,4 @@
 using Survivor.Data;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
@@ -7,6 +6,9 @@ using UnityEngine.UI;
 
 namespace Survivor.MainMenu
 {
+    /// <summary>
+    /// 武器收藏页面
+    /// </summary>
     public class CollectionUI : MonoBehaviour
     {
         [Header("主菜单按钮")]
@@ -34,10 +36,10 @@ namespace Survivor.MainMenu
         [SerializeField] private Text detailAbout;
 
         [Header("空状态")]
-        [SerializeField] private Transform detailContainer;      // 下侧详情容器
+        [SerializeField] private Transform detailContainer;      
 
         [Header("标题")]
-        [SerializeField] private Text collectionCountText;  // 显示 "已收藏 5/20"
+        [SerializeField] private Text collectionCountText;
 
         private List<CollectionItem> allItems;
 
@@ -47,7 +49,6 @@ namespace Survivor.MainMenu
             {
                 var items = CollectionManager.Instance.GetAllItems();
             }
-
             backButton.onClick.AddListener(ClosePanel);
             collectionPanel.SetActive(false);
         }
@@ -92,8 +93,6 @@ namespace Survivor.MainMenu
 
         private void RefreshList()
         {
-
-            // 清空旧列表
             foreach (Transform child in listContainer)
                 Destroy(child.gameObject);
 
@@ -106,8 +105,6 @@ namespace Survivor.MainMenu
                 return;
             }
 
-
-            // 有藏品时，生成列表项
             foreach (var item in allItems)
             {
                 bool isUnlocked = CollectionManager.Instance.IsUnlocked(item);
@@ -123,10 +120,8 @@ namespace Survivor.MainMenu
                 }
 
                 Button btn = go.GetComponent<Button>();
-
                 btn.onClick.AddListener(() => ShowDetail(item));
             }
-
             // 默认显示第一个藏品
             if (allItems.Count > 0)
                 ShowDetail(allItems[0]);
@@ -136,10 +131,8 @@ namespace Survivor.MainMenu
 
         private void ShowEmptyList()
         {
-            // 上半部分显示空提示
             GameObject emptyGO = Instantiate(emptyItemPrefab, listContainer);
         }
-
 
         private void ShowEmptyDetail()
         {
@@ -147,19 +140,17 @@ namespace Survivor.MainMenu
             detailIcon.sprite = null;
             detailIcon.color = new Color(0.2f, 0.2f, 0.2f, 1f);
             detailName.text = "???";
-            detailDesc.text = "在游戏中获得武器或被动技能来解锁收藏";
+            detailDesc.text = "在游戏中获得武器来解锁收藏";
             detailAbout.text = "";
         }
 
         private void ShowDetail(CollectionItem item)
         {
-
             // 正常显示藏品详情
             bool isUnlocked = CollectionManager.Instance.IsUnlocked(item);
 
             if (isUnlocked)
             {
-                // 可以实例化一个详情预制体，或者直接更新现有 UI
                 detailIcon.sprite = item.icon;
                 detailIcon.color = Color.white;
 
@@ -176,7 +167,6 @@ namespace Survivor.MainMenu
                 detailDesc.text = item.unlockConditionHint;
                 detailAbout.text = "尚未解锁";
             }
-
             detailIcon.gameObject.SetActive(true);
             detailName.gameObject.SetActive(true);
             detailDesc.gameObject.SetActive(true);
