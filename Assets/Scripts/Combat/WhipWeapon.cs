@@ -1,22 +1,24 @@
 using Survivor.Core;
 using Survivor.Player;
-using Survivor.UI;
 using UnityEngine;
 
 
 namespace Survivor.Combat
 {
+    /// <summary>
+    ///  效果更像Slash
+    /// </summary>
+    
     public class WhipWeapon : WeaponBase
     {
-        [Header("鞭子配置")]
-        [SerializeField] private GameObject slashPrefab;     // 挥砍特效预制体
-        [SerializeField] private float baseRange = 1.5f;       // 基础攻击距离 
-        [SerializeField] private float baseWidth = 0.8f;     // 基础攻击宽度
-        [SerializeField] private float effectDuration = 0.4f; // 特效持续时间
+        [Header("剑气配置")]
+        [SerializeField] private GameObject slashPrefab;     // 剑气预制体
+        [SerializeField] private float baseRange = 1.5f;      
+        [SerializeField] private float baseWidth = 0.8f;     
+        [SerializeField] private float effectDuration = 0.4f;
 
         protected override void Attack()
         {
-
             // 获取升级后的数值
             float range = GetCurrentRange();
             float width = GetCurrentWidth();
@@ -42,10 +44,10 @@ namespace Survivor.Combat
             if (slashPrefab == null) return;
 
             Vector2 facing = GetPlayerFacing();
-            // 特效生成在玩家前方，距离玩家 1 的位置
+            // 特效生成在玩家前方，距离玩家1.5f的位置
             float offset = 1.5f;
 
-            // 默认剑气角度：根据玩家朝向
+            // 默认剑气角度：根据玩家朝向（左右移动时z轴的值需要改变）
             float defaultAngle = facing == Vector2.right ? 0f : 180f;
 
             if (count == 1)
@@ -58,8 +60,8 @@ namespace Survivor.Combat
                 Vector3 front = transform.position + (Vector3)facing * (range / 2f + offset);
                 Vector3 back = transform.position - (Vector3)facing * (range / 2f + offset);
 
-                CreateSlash(front, range, width, defaultAngle);           // 前方：默认角度
-                CreateSlash(back, range, width, defaultAngle + 180f);     // 后方：默认角度 + 180°
+                CreateSlash(front, range, width, defaultAngle);           // 左边：默认角度
+                CreateSlash(back, range, width, defaultAngle + 180f);     // 右边：默认角度 + 180°
             }
         }
 
@@ -132,7 +134,7 @@ namespace Survivor.Combat
             return weaponData.shotPatterns[idx].width;       
         }
 
-        // 获取挥砍数量（升级后增加）
+        // 获取挥砍数量（升级后增加），最多2个剑风
         private int GetSlashCount()
         {
             if (weaponData?.shotPatterns == null || weaponData.shotPatterns.Length == 0)
