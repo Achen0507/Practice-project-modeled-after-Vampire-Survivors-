@@ -1,7 +1,5 @@
 using Survivor.Data;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Survivor.Upgrades
@@ -16,6 +14,6 @@ namespace Survivor.Upgrades
         public string description;
         public Sprite icon;
         public UpgradeData upgradeData;
-        public Action onApply; // 实际应用升级的回调
+        public Action onApply; 
     }
 }
