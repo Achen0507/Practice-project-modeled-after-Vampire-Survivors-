@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerAttributes : MonoBehaviour
 {
+    /// <summary>
+    /// 所有属性修改相关
+    /// </summary>
+    
     public static PlayerAttributes Instance { get; private set; }
 
     [Header("当前属性（游戏内会被升级修改）")]
@@ -81,8 +85,6 @@ public class PlayerAttributes : MonoBehaviour
 
         // 保存原始值
         SaveOriginalValues();
-
-        Debug.Log($"角色属性已初始化: 生命={maxHealth}, 移速={moveSpeed}");
     }
 
     public void SaveOriginalValues()
@@ -122,7 +124,7 @@ public class PlayerAttributes : MonoBehaviour
         }
     }
 
-    // 计算减伤后的伤害
+    // 减伤后的伤害
     public float CalculateDamage(float incomingDamage) {
         return incomingDamage * (1 - armor / 100f);
     }
@@ -236,7 +238,7 @@ public class PlayerAttributes : MonoBehaviour
         return 1 - Mathf.Min(0.8f, cooldownReduction / 100f);
     }
 
-    // 获取升级选项数量（运气影响）
+    // 获取升级选项数量（运气影响，最多4个）
     public int GetUpgradeOptionCount()
     {
         if (Random.value < luck / 100f)
@@ -261,7 +263,5 @@ public class PlayerAttributes : MonoBehaviour
         luck = originalLuck;
         growth = originalGrowth;
         greed = originalGreed;
-
-        Debug.Log("属性已重置为初始值");
     }
 }
