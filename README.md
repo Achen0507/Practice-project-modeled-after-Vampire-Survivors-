@@ -19,22 +19,25 @@ Visual Studio 2022
 - 项目实现了选人，成就，收藏，强化功能。
 - 现有DATA为5个基础角色，5把武器，7个强化技能，1张地图，10个被动技能，6个成就。
 - 美术资源都是从unity商城下载的免费资源。
-![游戏画面1](Screenshots/武器.png)
-![游戏画面2](Screenshots/强化.png)
-![游戏画面3](Screenshots/成就.png)
+
+<img src="Screenshots/武器.png" width="400">
+
+<img src="Screenshots/强化.png" width="400">
+
+<img src="Screenshots/成就.png" width="400">
 
 - 进入游戏时可以顺利升级选事件（3选1面板），增加角色强度。
-![游戏画面4](Screenshots/3选1界面.png)
-- 游戏失败时进入结算面板。
-![游戏画面5](Screenshots/结算面板.png)
-结算面板可以看到本局的选择详情。
 
-- 武器情况。
-![游戏画面6](Screenshots/弓箭.png)
-![游戏画面7](Screenshots/环绕物.png)
-![游戏画面8](Screenshots/激光.png)
-![游戏画面9](Screenshots/火球.png)
-![游戏画面10](Screenshots/剑气.png)
+<img src="Screenshots/3选1界面.png" width="400">
+
+- 游戏失败时进入结算面板，可以看到本局的选择详情。
+
+<img src="Screenshots/结算面板.png" width="400">
+
+### 武器展示
+| 弓箭 | 环绕物 | 激光 | 火球 | 剑气 |
+| :---: | :---: | :---: | :---: | :---: |
+| <img src="Screenshots/弓箭.png" width="150"> | <img src="Screenshots/环绕物.png" width="150"> | <img src="Screenshots/激光.png" width="150"> | <img src="Screenshots/火球.png" width="150"> | <img src="Screenshots/剑气.png" width="150"> |
 
 
 
