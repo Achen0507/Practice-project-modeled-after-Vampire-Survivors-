@@ -1,5 +1,4 @@
 using Survivor.Data;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,11 +38,9 @@ public class GameManager : MonoBehaviour
         LoadPoints();
     }
 
-
     public void AddCollectionPoints(int amount) {
         collectionPoints += amount;
         SavePoints();
-        Debug.Log($"收藏点数 +{amount}，当前: {collectionPoints}");
     }
 
     public int GetCollectionPoints() {
