@@ -1,10 +1,12 @@
 using Survivor.Core;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Survivor.Pickups
 {
+    /// <summary>
+    /// ½ð±ÒµôÂä
+    /// </summary>
+    
     public class GoldCoin : MonoBehaviour
     {
         [SerializeField] private int goldValue = 10;
