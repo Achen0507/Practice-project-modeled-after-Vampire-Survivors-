@@ -5,7 +5,7 @@ namespace Survivor.Combat
 {
     public class FireWand : WeaponBase
     {
-        [Header("火焰法杖")]
+        [Header("魔法火球")]
         [SerializeField] private GameObject fireballPrefab;
         [SerializeField] private float fireballSpeed = 10f;
         [SerializeField] private float burstInterval = 0.08f;  // 连发间隔（秒）
