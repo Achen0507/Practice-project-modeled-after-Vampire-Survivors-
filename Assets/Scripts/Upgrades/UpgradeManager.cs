@@ -8,11 +8,14 @@ using UnityEngine;
 
 namespace Survivor.Upgrades
 {
+    /// <summary>
+    /// 3选1管理
+    /// </summary>
     public class UpgradeManager : MonoBehaviour
     {
         public static UpgradeManager Instance { get; private set; }
         private bool isWaitingForChoice = false;
-        private int pendingLevelUps = 0;  // 待处理的升级次数
+        private int pendingLevelUps = 0; 
 
         [Header("升级池")]
         private List<UpgradeData> availableUpgrades;
@@ -96,7 +99,6 @@ namespace Survivor.Upgrades
                 return new List<UpgradeData>();
             }
 
-            // 过滤出可用的升级项
             List<UpgradeData> validOptions = new List<UpgradeData>();
             foreach (var upgrade in availableUpgrades)
             {
@@ -148,7 +150,6 @@ namespace Survivor.Upgrades
                     // 新被动：检查是否已满 6 个
                     if (PassiveManager.Instance?.Passives.Count >= 6)
                     {
-                        Debug.Log("被动技能已满，无法获得新被动");
                         return false;
                     }
                     return true;
@@ -167,13 +168,11 @@ namespace Survivor.Upgrades
         /// </summary>
         public void SelectUpgrade(UpgradeData upgrade)
         {
-            // 应用升级效果
             ApplyUpgrade(upgrade);
             GameEvents.UpgradeSelected(upgrade);
 
             isWaitingForChoice = false;
 
-            // 选择完升级后，触发玩家金光特效
             PlayerStats playerStats = FindObjectOfType<PlayerStats>();
             playerStats?.PlayLevelUpEffect();
         }
@@ -188,7 +187,6 @@ namespace Survivor.Upgrades
                     if (weapon != null)
                     {
                         weapon.Upgrade();
-                        Debug.Log($"武器升级: {weapon.name} -> Lv.{weapon.GetCurrentLevel()}");
                     }
                     else{
                         // 新武器：添加到武器管理器
@@ -241,7 +239,6 @@ namespace Survivor.Upgrades
 
             WeaponBase weapon = null;
 
-            // 根据武器名称添加对应脚本
             switch (data.weaponName)
             {
                 case "爱之箭":
@@ -290,7 +287,6 @@ namespace Survivor.Upgrades
                     Destroy(weaponObj);
                     return;
             }
-
             weapon.SetWeaponData(data);
             weapon.RecordFirstGetTime(Time.timeSinceLevelLoad);
             WeaponManager.Instance.AddWeapon(weapon);
