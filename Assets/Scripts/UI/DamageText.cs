@@ -4,6 +4,9 @@ using DG.Tweening;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// ÉËº¦Êý×Ö
+    /// </summary>
     public class DamageText : MonoBehaviour
     {
         private Text text;
@@ -20,7 +23,7 @@ namespace Survivor.UI
             if (isCrit)
             {
                 text.text = damage.ToString();
-                text.color = new Color(1f, 0.6f, 0f);  // ³ÈÉ«
+                text.color = new Color(1f, 0.6f, 0f); 
                 randomScale = Random.Range(1.3f, 1.8f);
             }
             else
@@ -32,10 +35,8 @@ namespace Survivor.UI
                 randomScale = Random.Range(0.9f, 1.3f);
             }
 
-            // Ëæ»úÆ«ÒÆ
             Vector2 randomOffset = Random.insideUnitCircle * 40f;
             transform.localPosition += (Vector3)randomOffset;
-
             transform.localScale = Vector3.one * randomScale;
 
             // µ¯Ìø + ÉÏÉý
