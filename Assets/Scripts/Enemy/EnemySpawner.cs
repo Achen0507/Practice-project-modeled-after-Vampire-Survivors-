@@ -1,12 +1,15 @@
 using Survivor.Cam;
 using Survivor.Core;
 using Survivor.Data;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Survivor.Enemy
 {
+    /// <summary>
+    /// 管理所有enemy出生
+    /// </summary>
+    
     public class EnemySpawner : MonoBehaviour
     {
         [Header("生成配置")]
@@ -70,7 +73,6 @@ namespace Survivor.Enemy
         private void Update() {
             if (player == null)
                 player = GameObject.FindGameObjectWithTag("Player")?.transform;
-
             if (player == null) return;
 
             // 计时
@@ -83,7 +85,6 @@ namespace Survivor.Enemy
                 {
                     SpawnEnemy();
                 }
-
                 // 重置计时器，随时间逐渐加快生成
                 spawnTimer = GetCurrentSpawnInterval();
             }
@@ -109,21 +110,17 @@ namespace Survivor.Enemy
             // Boss 在玩家稍远处生成
             Vector2 randomOffset = Random.insideUnitCircle.normalized * spawnRadius * 1.5f;
             Vector3 spawnPos = player.position + new Vector3(randomOffset.x, randomOffset.y, 0);
-
             GameObject bossObj = ObjectPool.Instance.Get("Enemy", spawnPos, Quaternion.identity);
             if (bossObj == null) return;
 
             Enemy boss = bossObj.GetComponent<Enemy>();
             boss?.Initialize(bossData);
 
-            // 让 Boss 变大
             bossObj.transform.localScale = Vector3.one * 2.5f;
-            Debug.Log($"第{bossIndex + 1}个 Boss 出现: {bossData.enemyName} 于 {Time.timeSinceLevelLoad:F0} 秒！");
 
             // Boss 出场震动
             CameraShake.Instance?.Shake(0.3f,0.4f);
         }
-
 
         /// <summary>
         /// 获取当前最大敌人数（平滑增长）
@@ -200,7 +197,6 @@ namespace Survivor.Enemy
             EnemyData selected = GetRandomEnemyByWeight();
             if (selected == null) return;
 
-            // 在玩家周围随机位置生成
             Vector2 randomOffset = Random.insideUnitCircle.normalized * spawnRadius;
             Vector3 spawnPos = player.position + new Vector3(randomOffset.x, randomOffset.y, 0);
 
@@ -217,7 +213,6 @@ namespace Survivor.Enemy
                 enemyObj = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
             }
 
-            // 用数据初始化
             Enemy enemy = enemyObj.GetComponent<Enemy>();
             enemy?.Initialize(selected);
 
