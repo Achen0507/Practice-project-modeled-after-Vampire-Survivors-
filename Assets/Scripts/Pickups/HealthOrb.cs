@@ -1,10 +1,12 @@
 using Survivor.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Survivor.Pickups
 {
+    /// <summary>
+    /// ºìÐÄµôÂä
+    /// </summary>
+    
     public class HealthOrb : MonoBehaviour
     {
         [Header("»Ö¸´Á¿")]
