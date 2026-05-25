@@ -1,5 +1,4 @@
 using Survivor.Core;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +7,12 @@ namespace Survivor.Enemy
     /// <summary>
     /// 敌人管理器 - 维护所有存活敌人的列表
     /// </summary>
+    
     public class EnemyManager : MonoBehaviour
     {
         public static EnemyManager Instance { get; private set; }
 
         private List<IDamageable> enemies = new List<IDamageable>();
-        private List<IDamageable> tempDeadList = new List<IDamageable>();
 
         public IReadOnlyList<IDamageable> AllEnemies => enemies;
 
@@ -29,7 +28,6 @@ namespace Survivor.Enemy
 
         private void Start()
         {
-            // 监听敌人死亡事件，自动移除
             GameEvents.OnEnemyDeath += OnEnemyDeath;
         }
 
