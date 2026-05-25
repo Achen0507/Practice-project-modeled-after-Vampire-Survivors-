@@ -1,14 +1,15 @@
 using Survivor.Data;
 using Survivor.Player;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
+/// <summary>
+/// 3选1卡片预制体
+/// </summary>
 public class UpgradeCardUI : MonoBehaviour
-{
+{   
     [Header("UI 组件")]
     [SerializeField] private Image iconImage;
     [SerializeField] private Text nameText;
