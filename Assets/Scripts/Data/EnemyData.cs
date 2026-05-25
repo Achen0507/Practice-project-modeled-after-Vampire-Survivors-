@@ -5,6 +5,7 @@ namespace Survivor.Data
     /// <summary>
     /// 敌人配置数据
     /// </summary>
+    
     [CreateAssetMenu(fileName = "New Enemy", menuName = "Survivor/Enemy Data")]
     public class EnemyData : ScriptableObject
     {
@@ -18,11 +19,11 @@ namespace Survivor.Data
         [Header("战斗属性")]
         public float baseHealth = 30f;
         public float baseSpeed = 2f;
-        public float baseDamage = 10f;          // 碰撞伤害
+        public float baseDamage = 10f;          
 
         [Header("击杀奖励")]
         public int expValue = 5;                 // 死亡掉落的经验值
-        public int goldValue = 0;                // 金币（后续扩展）
+        public int goldValue = 0;                // 金币
 
         [Header("视觉")]
         public RuntimeAnimatorController animatorController;
