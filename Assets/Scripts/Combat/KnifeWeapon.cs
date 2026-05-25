@@ -5,12 +5,13 @@ using UnityEngine;
 namespace Survivor.Combat
 {
     /// <summary>
-    /// 飞刀武器 - 自动瞄准最近敌人发射子弹
+    /// 飞刀武器 - 效果更像箭
     /// </summary>
+    
     public class KnifeWeapon : WeaponBase
     {
         [Header("飞刀专用")]
-        [SerializeField] private GameObject knifePrefab;  // 飞刀子弹预制体
+        [SerializeField] private GameObject knifePrefab;  
 
         protected override void Attack()
         {
@@ -21,23 +22,18 @@ namespace Survivor.Combat
             if (playerTransform == null)
             {
                 playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
-                if (playerTransform == null)
-                {
-                    Debug.LogError("找不到 Player！");
-                    return;
-                }
+                if (playerTransform == null) return;
             }
 
-            // 获取当前等级的射击模式
+            // 获取当前等级的技能效果
             ShotPattern pattern = GetCurrentShotPattern();
 
             int weaponLevelCount = pattern.projectileCount;
 
-            // 全局加成（复制器等）默认是 1，加成后增加
+            // 全局加成（被动技能复制器等）
             int globalBonus = GetProjectileCount() - 1;
             int finalCount = weaponLevelCount + globalBonus;
 
-            // 计算方向
             Vector2 baseDirection = (currentTarget.Transform.position - playerTransform.position).normalized;
 
             // 根据散射角度生成多个子弹
@@ -53,7 +49,6 @@ namespace Survivor.Combat
 
             for (int i = 0; i < finalCount; i++)
                 {
-                // 计算每个子弹的方向
                 Vector2 finalDir = baseDirection;
                 if (finalCount > 1)
                 {
@@ -62,7 +57,6 @@ namespace Survivor.Combat
                 }      
 
                 Vector3 spawnPos = playerTransform.position;  // 当前玩家位置
-
                 GameObject knife = ObjectPool.Instance.Get("Knife", spawnPos, Quaternion.identity);
 
                 if (knife == null) continue;
@@ -78,7 +72,6 @@ namespace Survivor.Combat
                     projectile.SetParentWeapon(this);
                 }
             }
-
             AudioManager.Instance?.PlayKnifeAttack();
         }
 
@@ -88,8 +81,6 @@ namespace Survivor.Combat
                 int index = Mathf.Min(level - 1, weaponData.shotPatterns.Length - 1);
                 return weaponData.shotPatterns[index];
             }
-
-            // 默认模式
             return new ShotPattern { projectileCount = 1 };
         }
 
