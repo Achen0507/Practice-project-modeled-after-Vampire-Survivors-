@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Survivor.Data
 {
+    /// <summary>
+    /// 武器收藏系统data
+    /// </summary>
+    
     [CreateAssetMenu(fileName = "New CollectionItem", menuName = "Survivor/Collection Item")]
     public class CollectionItem : ScriptableObject
     {
@@ -16,7 +18,7 @@ namespace Survivor.Data
         public string about;
         public Sprite icon;
         public bool isUnlock;
-        public int collectionPointValue = 10;
+        public int collectionPointValue = 10; ///暂无用
         public string unlockConditionHint = "???";
         public ItemType itemType;
     }
