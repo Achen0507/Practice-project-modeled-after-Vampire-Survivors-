@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Survivor.Pickups
 {
+    /// <summary>
+    /// 经验值掉落
+    /// </summary>
+    
     public class ExpOrb : MonoBehaviour, IPoolResettable
     {
         [SerializeField] private int expValue = 10;
@@ -25,8 +29,7 @@ namespace Survivor.Pickups
         }
 
         public void OnGetFromPool()
-        {
-            // 重置状态
+        { 
             isAttracting = false;
         }
 
@@ -43,7 +46,6 @@ namespace Survivor.Pickups
             if (currentPlayer == null) return;
             float distance = Vector2.Distance(transform.position, currentPlayer.position);
 
-            // 进入吸引范围
             if (!isAttracting && distance < attractRange)
             {
                 isAttracting = true;
