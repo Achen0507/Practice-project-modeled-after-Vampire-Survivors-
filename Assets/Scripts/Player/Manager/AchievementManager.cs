@@ -1,6 +1,5 @@
 using Survivor.Data;
 using Survivor.UI;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ namespace Survivor.MainMenu
         public static AchievementManager Instance { get; private set; }
         private HashSet<string> recordedWeapons = new HashSet<string>();
 
-        [Header("弹窗")]
+        [Header("成就弹窗")]
         [SerializeField] private GameObject toastPrefab;
 
         private List<AchievementData> achievements;
@@ -71,11 +70,8 @@ namespace Survivor.MainMenu
                     //如果是武器解锁成就，检查这个武器是否已经记录过
                     if (type == AchievementType.WeaponsUnlocked)
                     {
-                        if (recordedWeapons.Contains(enemyName))
-                        {
-                            Debug.Log($"武器 {enemyName} 已记录过成就，跳过");
-                            continue;
-                        }
+                        if (recordedWeapons.Contains(enemyName)) continue;
+
                         recordedWeapons.Add(enemyName);
                     }
 
@@ -86,7 +82,6 @@ namespace Survivor.MainMenu
 
                     if (newValue >= ach.targetValue)
                     {
-                        Debug.Log($"成就解锁: {ach.achievementName}");
                         ShowToast(ach);
                         AudioManager.Instance?.PlayAchievementUnlock();
                     }              
@@ -126,7 +121,6 @@ namespace Survivor.MainMenu
             {
                 toast.Initialize(achievement);
             }
-
             Destroy(toastObj, 3f);
         }
     }
