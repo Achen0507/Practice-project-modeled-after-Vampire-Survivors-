@@ -87,7 +87,5 @@ namespace Survivor.Core
         /// <summary> 局外数值改变 </summary>
         public static event Action OnPlayerStatsChanged;
         public static void PlayerStatsChanged() => OnPlayerStatsChanged?.Invoke();
-
-        ///一行注释
     }
 }
