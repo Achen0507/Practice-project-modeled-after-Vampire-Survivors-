@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class FloatingHealthBar : MonoBehaviour
 {
+    /// <summary>
+    /// 血条
+    /// </summary>
     [SerializeField] private Slider healthSlider;
-    [SerializeField] private Vector3 offset = new Vector3(0, 0, 0);  // 血量条偏移
+    [SerializeField] private Vector3 offset = new Vector3(0, 0, 0);  
     private PlayerStats playerStats;
     private Transform playerTransform;
 
@@ -19,9 +22,7 @@ public class FloatingHealthBar : MonoBehaviour
             Debug.LogError("FloatingHealthBar: 找不到 PlayerStats");
             return;
         }
-        // 获取玩家位置（向上查找根物体）
         playerTransform = playerStats.transform;
-
         healthSlider.maxValue = playerStats.MaxHealth;
         healthSlider.value = playerStats.CurrentHealth;
     }
