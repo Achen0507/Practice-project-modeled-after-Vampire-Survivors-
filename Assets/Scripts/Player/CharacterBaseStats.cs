@@ -1,5 +1,9 @@
 using System;
 
+/// <summary>
+/// 玩家的基础设定，用于重置
+/// </summary>
+
 [Serializable]
 public class CharacterBaseStats
 {
