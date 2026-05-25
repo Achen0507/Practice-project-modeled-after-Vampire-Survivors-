@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace Survivor.Data
 {
+    /// <summary>
+    /// 管理不同角色的data
+    /// </summary>
+    
     [CreateAssetMenu(fileName = "New Character", menuName = "Survivor/Character")]
     public class CharacterData : ScriptableObject
     {
