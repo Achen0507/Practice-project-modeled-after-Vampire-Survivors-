@@ -11,7 +11,7 @@ using UnityEngine;
 namespace Survivor.Player
 {
     /// <summary>
-    /// 玩家属性：生命值、经验、等级
+    /// 玩家属性：生命值、经验、等级的相关事件
     /// </summary>
     public class PlayerStats : MonoBehaviour, IDamageable
     {
@@ -62,17 +62,12 @@ namespace Survivor.Player
 
             sr = GetComponent<SpriteRenderer>();
             originalSprite = sr.sprite;
-
-            // 生成黄色剪影
             yellowSprite = CreateYellowSilhouette();
         }
 
         public void RefreshHealthFromAttributes()
         {
-            // 从 PlayerAttributes 重新获取血量
             currentHealth = MaxHealth;
-
-            // 触发血量更新事件，让血条 UI 刷新
             GameEvents.PlayerTakeDamage(0, currentHealth, MaxHealth);
         }
 
@@ -129,10 +124,9 @@ namespace Survivor.Player
             float oldHealth = currentHealth;
             currentHealth = Mathf.Min(MaxHealth, currentHealth + amount);
 
-            // 触发血量变化事件，让血条 UI 更新
+            // 血条 UI 更新
             if (currentHealth > oldHealth)
             {
-                // 触发血量变化事件
                 GameEvents.PlayerTakeDamage(0, currentHealth, MaxHealth);
             }
         }
@@ -150,8 +144,7 @@ namespace Survivor.Player
 
             currentExp += finalAmount;
 
-            CheckLevelUp();  // 调用统一方法
-
+            CheckLevelUp();  
             GameEvents.PlayerGainExp(finalAmount, currentExp, currentLevel);
         }
 
@@ -185,15 +178,13 @@ namespace Survivor.Player
 
         private void Die()
         {
-            Debug.Log("玩家死亡");
-
             if (WeaponManager.Instance == null)
             {
                 Debug.LogError("WeaponManager.Instance is null!");
                 return;
             }
 
-            // 收集本局数据
+            // 收集本局数据，结算用
             GameStats stats = new GameStats
             {
                 playTime = GetPlayTime(),
@@ -232,7 +223,7 @@ namespace Survivor.Player
                 });
             }
 
-            // 三选一属性升级（需要在 UpgradeManager 中记录）
+            // 三选一属性升级
             if (UpgradeManager.Instance != null && UpgradeManager.Instance.obtainedUpgrades != null)
             {
                 foreach (var upgrade in UpgradeManager.Instance.obtainedUpgrades)
@@ -245,6 +236,7 @@ namespace Survivor.Player
                 }
             }
             GameOverUI.Instance.Show(false, stats, weapons,collections);
+
             AudioManager.Instance?.PlayPlayerDeath();
 
             GameEvents.PlayerDeath();
@@ -281,7 +273,7 @@ namespace Survivor.Player
             return 0;
         }
 
-        private Sprite CreateYellowSilhouette()
+        private Sprite CreateYellowSilhouette()  //升级时的特效
         {
             Texture2D originalTex = originalSprite.texture;
             Rect rect = originalSprite.rect;
@@ -344,9 +336,6 @@ namespace Survivor.Player
 
         public void WinGame()
         {
-            Debug.Log("游戏胜利");
-
-            // 收集本局数据（和 Die 一样）
             GameStats stats = new GameStats
             {
                 playTime = GetPlayTime(),
