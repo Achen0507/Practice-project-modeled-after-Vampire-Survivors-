@@ -1,7 +1,5 @@
 using DG.Tweening;
 using Survivor.Core;
-using Survivor.UI;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +7,11 @@ namespace Survivor.Combat
 {
     public class HeavenStrike : WeaponBase
     {
-        [Header("圣光射线")]
+        [Header("激光射线")]
         [SerializeField] private GameObject warningPrefab;  // 预警特效
         [SerializeField] private GameObject laserPrefab;    // 激光特效
         [SerializeField] private float warningDelay = 1.8f; // 预警时间
-        [SerializeField] private float radius = 1.2f;       // 攻击半径
+        [SerializeField] private float radius = 1.2f;      
 
 
         protected override void Attack()
@@ -28,7 +26,6 @@ namespace Survivor.Combat
 
             if (laserCount == 1 || enemies.Count <= laserCount)
             {
-                // 数量不足，在目标位置生成激光
                 SpawnLaser(currentTarget.Transform.position, radius);
             }
             else
@@ -46,8 +43,7 @@ namespace Survivor.Combat
         }
 
         private void SpawnLaser(Vector3 position, float radius) {
-            // 生成预警
-            // 直接生成在世界坐标
+            // 生成预警预制体
             GameObject warning = Instantiate(warningPrefab, position, Quaternion.identity);
             Vector3 originalScale = warning.transform.localScale;
             warning.transform.localScale = originalScale * 0.5f;
@@ -59,6 +55,7 @@ namespace Survivor.Combat
                 DealDamage(position, radius);
             });
         }
+
         private void DealDamage(Vector3 position, float radius)
         {
             GameObject laser = Instantiate(laserPrefab, position, Quaternion.identity);
@@ -70,7 +67,6 @@ namespace Survivor.Combat
                 IDamageable enemy = enemyCollider.GetComponent<IDamageable>();
                 if (enemy != null && enemy.IsAlive)
                 {
-                    // 随机伤害（0.8~1.2 倍）
                     float damage = GetCurrentDamage() * Random.Range(0.8f, 1.2f);
                     enemy.TakeDamage(damage);
                     AddDamage(damage);
@@ -78,7 +74,6 @@ namespace Survivor.Combat
                     ShowDamageNumber(enemyCollider.transform.position, Mathf.RoundToInt(damage));
                 }
             }
-
             Destroy(laser, 1f);
         }
 
@@ -95,7 +90,6 @@ namespace Survivor.Combat
                     enemies.Add(enemyObj.transform);
                 }
             }
-
             return enemies;
         }
 
@@ -109,8 +103,7 @@ namespace Survivor.Combat
                 int idx = Mathf.Min(level - 1, weaponData.shotPatterns.Length - 1);
                 weaponLevelCount = weaponData.shotPatterns[idx].projectileCount;
             }
-
-            // 全局加成（复制器等）
+            // 全局加成（被动技能复制器等）
             int globalBonus = GetProjectileCount() - 1;
             return Mathf.Max(1, weaponLevelCount + globalBonus);
         }
