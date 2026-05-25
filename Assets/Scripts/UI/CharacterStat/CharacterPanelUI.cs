@@ -1,15 +1,15 @@
 using Survivor.Core;
 using Survivor.Data;
-using Survivor.MainMenu;
 using Survivor.Passives;
 using Survivor.Player;
-using Survivor.Upgrades;
 using UnityEngine;
-using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// 局内角色属性面板动态获取数据
+    /// </summary>
     public class CharacterPanelUI : MonoBehaviour
     {
         [Header("面板")]
@@ -50,7 +50,6 @@ namespace Survivor.UI
             playerStats = FindObjectOfType<PlayerStats>();
             attributes = PlayerAttributes.Instance;
             weaponManager = WeaponManager.Instance;
-
             currentCharacter = GameManager.Instance?.SelectedCharacter;
         }
 
@@ -84,7 +83,6 @@ namespace Survivor.UI
                 }
             }
         }
-
         private void RefreshPanel() {
             if (playerStats == null || attributes == null) return;
 
@@ -103,10 +101,8 @@ namespace Survivor.UI
             growthText.text = $"{(attributes.growth):F0}%";
             greedText.text = $"{(attributes.greed ):F0}%";
 
-            //// 刷新武器列表
             RefreshWeaponList();
 
-            // 刷新被动列表
             RefreshPassiveList();
         }
 
@@ -138,7 +134,6 @@ namespace Survivor.UI
                 Destroy(child.gameObject);
             }
 
-            // 从 PassiveManager 获取被动列表
             if (PassiveManager.Instance == null) return;
 
             foreach(var passive in PassiveManager.Instance.Passives) {
@@ -160,6 +155,5 @@ namespace Survivor.UI
 
         public GameObject GetDamageTextPrefab() => damageTextPrefab;
         public Transform GetCanvasTransform() => canvasTransform;
-
     }
 }
