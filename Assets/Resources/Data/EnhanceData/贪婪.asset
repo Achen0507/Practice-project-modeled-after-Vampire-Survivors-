@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4914b87595b2c4c94f87a0cbdebd75, type: 3}
+  m_Name: "\u8D2A\u5A6A"
+  m_EditorClassIdentifier: 
+  nameKey: Enhance_Greed_Name
+  descKey: Enhance_Greed_Desc
+  upgradeName: "\u8D2A\u5A6A"
+  description: "\u91D1\u5E01\u83B7\u53D6+7%"
+  icon: {fileID: 21300000, guid: ef9ba620c9e9604438f10369334feead, type: 3}
+  maxLevel: 2
+  costPerLevel: d0070000a00f0000
+  statType: 11
+  isPercentage: 1
+  baseValue: 0.07
+  upgradeType: 1
+  relatedWeapon: {fileID: 0}
+  relatedPassive: {fileID: 0}
+  statModifiers: []
+  baseWeight: 50
+  prerequisites: []
+  requiredLevel: 0

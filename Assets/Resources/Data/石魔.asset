@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eabdd8d8f686f3459fb6b9eca5797fc, type: 3}
+  m_Name: "\u77F3\u9B54"
+  m_EditorClassIdentifier: 
+  nameKey: Enemy_07_Name
+  descKey: 
+  enemyName: "\u77F3\u9B54"
+  description: "\u84DD_\u9A91\u58EB"
+  baseHealth: 80
+  baseSpeed: 1
+  baseDamage: 10
+  expValue: 30
+  goldValue: 25
+  animatorController: {fileID: 9100000, guid: bc30e5deacc2d984196e4726d2ab74a1, type: 2}
+  sprite: {fileID: 1448252480329919801, guid: adae9b17fdc8345468f332b087c212f9, type: 3}
+  spawnWeight: 30
+  difficultyMultiplier: 1.2
+  unlockTime: 720

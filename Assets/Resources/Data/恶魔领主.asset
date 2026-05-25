@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eabdd8d8f686f3459fb6b9eca5797fc, type: 3}
+  m_Name: "\u6076\u9B54\u9886\u4E3B"
+  m_EditorClassIdentifier: 
+  nameKey: Enemy_BOSS04_Name
+  descKey: 
+  enemyName: "\u6076\u9B54\u9886\u4E3B"
+  description: "\u7D2B_\u54E5\u5E03\u6797"
+  baseHealth: 1200
+  baseSpeed: 1.5
+  baseDamage: 20
+  expValue: 500
+  goldValue: 800
+  animatorController: {fileID: 9100000, guid: a99880e1a9c9f0d4484bdf6102d5faa0, type: 2}
+  sprite: {fileID: 2272326806082863785, guid: d97d139f1d4208f4f9657b495287e65c, type: 3}
+  spawnWeight: 0
+  difficultyMultiplier: 2
+  unlockTime: 1200

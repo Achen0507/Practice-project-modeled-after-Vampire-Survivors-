@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4914b87595b2c4c94f87a0cbdebd75, type: 3}
+  m_Name: "\u83E0\u83DC"
+  m_EditorClassIdentifier: 
+  nameKey: Upgrade_Bocai_Name
+  descKey: Upgrade_Bocai_Desc
+  upgradeName: "\u83E0\u83DC"
+  description: "\u6BCF\u79D2\u6062\u590D\u751F\u547D0.2"
+  icon: {fileID: 21300000, guid: 2e350bcef09f70943ba03de78d8c063a, type: 3}
+  maxLevel: 0
+  costPerLevel: 
+  statType: 1
+  isPercentage: 0
+  baseValue: 0.2
+  upgradeType: 2
+  relatedWeaponName: 
+  relatedPassiveName: "\u83E0\u83DC"
+  statModifiers: []
+  baseWeight: 50
+  prerequisiteNames: []
+  requiredLevel: 0

@@ -1,0 +1,763 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UIText Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UIText
+  m_TableCollectionNameGuidString: d194e9651e6c31646a03378e909a5283
+  m_Entries:
+  - m_Id: 8117335281664
+    m_Key: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8262609195008
+    m_Key: AttackRange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8294297161728
+    m_Key: Cooldown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8242220683264
+    m_Key: Duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8441089413120
+    m_Key: Greed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8419681685504
+    m_Key: Growth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8083030069248
+    m_Key: Heal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8399909736448
+    m_Key: Luck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8017347268608
+    m_Key: MaxHealth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16829659664384
+    m_Key: Weapon_Slash_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16830196535296
+    m_Key: Weapon_Slash_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10300764114944
+    m_Key: OVER_Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10487150596096
+    m_Key: OVER_Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2126178865152
+    m_Key: OVER_GoAchi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46278037504
+    m_Key: OVER_GoMain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10365201207296
+    m_Key: OVER_Kill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10331000852480
+    m_Key: OVER_Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10571779067904
+    m_Key: OVER_RewordItem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10252181491712
+    m_Key: OVER_Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10511930544128
+    m_Key: OVER_TimeRewoed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10395584745472
+    m_Key: OVER_Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13578331672576
+    m_Key: PAUSE_Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13565866201088
+    m_Key: PAUSE_Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8156510081024
+    m_Key: Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8325712498688
+    m_Key: ProjeltCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8178756669440
+    m_Key: ProjeltSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8373875691520
+    m_Key: Revive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8141729353728
+    m_Key: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 490358362112
+    m_Key: UI_Achievement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 246920957952
+    m_Key: UI_Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2252322557952
+    m_Key: UI_Border
+    m_Metadata:
+      m_Items: []
+  - m_Id: 573262974976
+    m_Key: UI_Collection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5273379065856
+    m_Key: UI_CollectionTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311592931328
+    m_Key: UI_Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 764737146880
+    m_Key: UI_Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1540842770432
+    m_Key: UI_Damagetext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6188882382848
+    m_Key: UI_Display
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2896114667520
+    m_Key: UI_EhanceItem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 670415638528
+    m_Key: UI_Enhance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2635212181504
+    m_Key: UI_Finished
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1634052788224
+    m_Key: UI_Flash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 898116014080
+    m_Key: UI_Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1314304217088
+    m_Key: UI_Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144517025792
+    m_Key: UI_Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2442169339904
+    m_Key: UI_PixelFont
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3005913157632
+    m_Key: UI_PlayerCheck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413124448256
+    m_Key: UI_Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746950868992
+    m_Key: UI_Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2551141552128
+    m_Key: UI_Reworded
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2324145819648
+    m_Key: UI_ScreenShake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1375163568128
+    m_Key: UI_Source
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6913557450752
+    m_Key: UI_SourceTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2059426516992
+    m_Key: UI_WINDOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14705991274496
+    m_Key: UPGRADE_LevelUp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16032997756928
+    m_Key: Weapon_Arrow_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15888210382848
+    m_Key: Weapon_Arrow_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16240443838464
+    m_Key: Weapon_Bible_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16233611317248
+    m_Key: Weapon_Bible_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16511999856640
+    m_Key: Weapon_Firewand_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16509982396416
+    m_Key: Weapon_Firewand_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16700181499904
+    m_Key: Weapon_HeavenStrike_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16698096930816
+    m_Key: Weapon_HeavenStrike_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19552413077504
+    m_Key: Character_01_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19554162102272
+    m_Key: Character_01_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19599594803200
+    m_Key: Character_02_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19601448685568
+    m_Key: Character_02_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19719249907712
+    m_Key: Character_03_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19720663388160
+    m_Key: Character_03_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19799696658432
+    m_Key: Character_04_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19801714118656
+    m_Key: Character_04_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19861134823424
+    m_Key: Character_05_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19862648967168
+    m_Key: Character_05_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20244473237504
+    m_Key: Passive_Power_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20246796881920
+    m_Key: Passive_Power_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20349049819136
+    m_Key: Passive_Spell_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20350098395136
+    m_Key: Passive_Spell_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20379554992128
+    m_Key: Passive_Fuzhiqi_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20381253685248
+    m_Key: Passive_Fuzhiqi_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20493522620416
+    m_Key: Passive_Luck_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20494780911616
+    m_Key: Passive_Luck_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20568474832896
+    m_Key: Passive_Armor_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20569619877888
+    m_Key: Passive_Armor_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20693855162368
+    m_Key: Passive_Zhutai_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20695222505472
+    m_Key: Passive_Zhutai_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20751220658176
+    m_Key: Passive_Huangguan_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20752474755072
+    m_Key: Passive_Huangguan_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20855788851200
+    m_Key: Passive_Kongbai_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20857198137344
+    m_Key: Passive_Kongbai_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20920150446080
+    m_Key: Passive_Wings_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20921492623360
+    m_Key: Passive_Wings_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20975083245568
+    m_Key: Passive_Bocai_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20979512430592
+    m_Key: Passive_Bocai_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21617919053824
+    m_Key: Achieve_collect05_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21619496112128
+    m_Key: Achieve_collect05_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21709245829120
+    m_Key: Achieve_collect20_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21710558646272
+    m_Key: Achieve_collect20_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21750324842496
+    m_Key: Achieve_collect100_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21751830597632
+    m_Key: Achieve_collect100_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21834013790208
+    m_Key: Achieve_Kill10_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21835444047872
+    m_Key: Achieve_Kill10_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21993762246656
+    m_Key: Achieve_Kill100_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21996442406912
+    m_Key: Achieve_Kill100_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22069779812352
+    m_Key: Achieve_Kill1000_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22072342532096
+    m_Key: Achieve_Kill1000_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22537641840640
+    m_Key: Map_For_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22551260745728
+    m_Key: Map_Factory_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22615622340608
+    m_Key: Map_Jiaotang_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23329547407360
+    m_Key: Enhance_Power_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23341333401600
+    m_Key: Enhance_Power_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23423285907456
+    m_Key: Enhance_Count_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23424766496768
+    m_Key: Enhance_Count_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23463580585984
+    m_Key: Enhance_Growth_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23465568686080
+    m_Key: Enhance_Growth_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23533034065920
+    m_Key: Enhance_Maxhealth_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23533671600128
+    m_Key: Enhance_Maxhealth_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23611425607680
+    m_Key: Enhance_Speed_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23612558069760
+    m_Key: Enhance_Speed_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23690509209600
+    m_Key: Enhance_Kongbai_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23691528425472
+    m_Key: Enhance_Kongbai_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23751175622656
+    m_Key: Enhance_Greed_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23752652017664
+    m_Key: Enhance_Greed_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23848005324800
+    m_Key: Enhance_Luck_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23848533807104
+    m_Key: Enhance_Luck_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24059503104000
+    m_Key: Upgrade_FireWand_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24060044169216
+    m_Key: Upgrade_FireWand_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24109264326656
+    m_Key: Upgrade_Heav_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24109734088704
+    m_Key: Upgrade_Heav_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24175303643136
+    m_Key: Upgrade_Arrow_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24175932788736
+    m_Key: Upgrade_Arrow_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24260825501696
+    m_Key: Upgrade_Orbit_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24261337206784
+    m_Key: Upgrade_Orbit_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24343373598720
+    m_Key: Upgrade_Armor_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24343876915200
+    m_Key: Upgrade_Armor_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24411572981760
+    m_Key: Upgrade_Zhutai_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24412709638144
+    m_Key: Upgrade_Zhutai_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24492237836288
+    m_Key: Upgrade_Luck_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24493496127488
+    m_Key: Upgrade_Luck_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24573875769344
+    m_Key: Upgrade_Huangguan_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24575306027008
+    m_Key: Upgrade_Huangguan_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24644998582272
+    m_Key: Upgrade_Fuzhi_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24645501898752
+    m_Key: Upgrade_Fuzhi_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24707669872640
+    m_Key: Upgrade_Kongbai_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24708177383424
+    m_Key: Upgrade_Kongbai_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24828570685440
+    m_Key: Upgrade_Power_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24829917057024
+    m_Key: Upgrade_Power_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24871352586240
+    m_Key: Upgrade_Bocai_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24871885262848
+    m_Key: Upgrade_Bocai_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24943326842880
+    m_Key: Upgrade_Spell_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24944631271424
+    m_Key: Upgrade_Spell_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25008997060608
+    m_Key: Upgrade_Wings_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25010670587904
+    m_Key: Upgrade_Wings_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25069600559104
+    m_Key: Upgrade_Slash_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25070431031296
+    m_Key: Upgrade_Slash_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25485478383616
+    m_Key: Collect_Slash_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25486669565952
+    m_Key: Collect_Slash_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25516319100928
+    m_Key: Collect_Slash_About
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25555359682560
+    m_Key: Collect_Orbit_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25556064325632
+    m_Key: Collect_Orbit_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25557381337088
+    m_Key: Collect_Orbit_About
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25699475968000
+    m_Key: Collect_FireWand_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25700046393344
+    m_Key: Collect_FireWand_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25701224992768
+    m_Key: Collect_FireWand_About
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25808930525184
+    m_Key: Collect_Arrow_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25809765191680
+    m_Key: Collect_Arrow_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25810985734144
+    m_Key: Collect_Arrow_About
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25894796316672
+    m_Key: Collect_Heav_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25895266078720
+    m_Key: Collect_Heav_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25896360792064
+    m_Key: Collect_Heav_About
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31039445716992
+    m_Key: Enemy_BOSS01_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31127039561728
+    m_Key: Enemy_BOSS02_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31138649395200
+    m_Key: Enemy_BOSS03_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31178398814208
+    m_Key: Enemy_BOSS04_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31268031090688
+    m_Key: Enemy_01_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31340680630272
+    m_Key: Enemy_02_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31352860889088
+    m_Key: Enemy_03_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31368912490496
+    m_Key: Enemy_04_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31417281204224
+    m_Key: Enemy_05_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31464391626752
+    m_Key: Enemy_06_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31493164552192
+    m_Key: Enemy_07_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31521299943424
+    m_Key: Enemy_08_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37714852499456
+    m_Key: UI_Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52870135336960
+    m_Key: UI_Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76463560904704
+    m_Key: UI_Victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76465439952896
+    m_Key: UI_GameOver
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1779415320407

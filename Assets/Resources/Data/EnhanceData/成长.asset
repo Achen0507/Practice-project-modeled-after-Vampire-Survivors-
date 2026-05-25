@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4914b87595b2c4c94f87a0cbdebd75, type: 3}
+  m_Name: "\u6210\u957F"
+  m_EditorClassIdentifier: 
+  nameKey: Enhance_Growth_Name
+  descKey: Enhance_Growth_Desc
+  upgradeName: "\u6210\u957F"
+  description: "\u7ECF\u9A8C\u503C\u83B7\u53D6+7%\uFF0C\u53EF\u589E\u52A0\u81F314%"
+  icon: {fileID: 21300000, guid: 51d32f802cfabaf4a86ad058906b4c11, type: 3}
+  maxLevel: 2
+  costPerLevel: dc050000b80b0000
+  statType: 10
+  isPercentage: 1
+  baseValue: 0.07
+  upgradeType: 1
+  relatedWeapon: {fileID: 0}
+  relatedPassive: {fileID: 0}
+  statModifiers: []
+  baseWeight: 50
+  prerequisites: []
+  requiredLevel: 0

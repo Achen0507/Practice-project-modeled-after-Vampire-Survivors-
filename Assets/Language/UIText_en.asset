@@ -1,0 +1,760 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UIText_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: d194e9651e6c31646a03378e909a5283, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 46278037504
+    m_Localized: MAIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144517025792
+    m_Localized: OPTIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 246920957952
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311592931328
+    m_Localized: CONFIRM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413124448256
+    m_Localized: QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 490358362112
+    m_Localized: REWORD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 573262974976
+    m_Localized: COLLECTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 670415638528
+    m_Localized: ENHANCE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 764737146880
+    m_Localized: CREDITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 898116014080
+    m_Localized: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1314304217088
+    m_Localized: MUSIC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1375163568128
+    m_Localized: SOURCE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1540842770432
+    m_Localized: DAMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1634052788224
+    m_Localized: FLASH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746950868992
+    m_Localized: RESOLUTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2059426516992
+    m_Localized: WINDOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2126178865152
+    m_Localized: REWORD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2252322557952
+    m_Localized: BORDER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2324145819648
+    m_Localized: SCREENSHAKE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2442169339904
+    m_Localized: PIXELFONT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2551141552128
+    m_Localized: REWORDED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2635212181504
+    m_Localized: FINISHED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2896114667520
+    m_Localized: ENHANCEITEMS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3005913157632
+    m_Localized: CHARACTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5273379065856
+    m_Localized: COLLECTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6188882382848
+    m_Localized: DISPLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6913557450752
+    m_Localized: SOURCE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8017347268608
+    m_Localized: MAXHEALTH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8083030069248
+    m_Localized: HEAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8117335281664
+    m_Localized: ARMOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8141729353728
+    m_Localized: SPEED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8156510081024
+    m_Localized: POWER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8178756669440
+    m_Localized: PROJELTSPEED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8242220683264
+    m_Localized: DURATION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8262609195008
+    m_Localized: ATTACKRANGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8294297161728
+    m_Localized: COOLDOWN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8325712498688
+    m_Localized: PROJELTCOUNT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8373875691520
+    m_Localized: REVIVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8399909736448
+    m_Localized: LUCK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8419681685504
+    m_Localized: GROWTH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8441089413120
+    m_Localized: GREED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10300764114944
+    m_Localized: GOLDS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10487150596096
+    m_Localized: DAMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10365201207296
+    m_Localized: KILLS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10331000852480
+    m_Localized: LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10571779067904
+    m_Localized: REWORD ITEMS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10252181491712
+    m_Localized: GAME TIME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10511930544128
+    m_Localized: TIME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10395584745472
+    m_Localized: WEAPONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13565866201088
+    m_Localized: RESTART
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13578331672576
+    m_Localized: QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14705991274496
+    m_Localized: LEVEL UP!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15888210382848
+    m_Localized: Love Arrow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16509982396416
+    m_Localized: Fire Ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16829659664384
+    m_Localized: SLASH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16830196535296
+    m_Localized: From time to time, swing sword energy forward. After upgrading,
+      the sword energy increases to two strikes and expands its range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16032997756928
+    m_Localized: Flying arrows. After upgrading, their speed and number can be increased
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16240443838464
+    m_Localized: Orbiting-type weapon. After upgrading, the number of auras increases
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16233611317248
+    m_Localized: Guardian Aura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16511999856640
+    m_Localized: Shoot a certain number of fireballs randomly around the player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16700181499904
+    m_Localized: Randomly fire lasers at surrounding enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16698096930816
+    m_Localized: Holy Laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19552413077504
+    m_Localized: Character01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19599594803200
+    m_Localized: Character02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19554162102272
+    m_Localized: Gain Love Arrow at the start of the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19601448685568
+    m_Localized: Gain Guardian Aura at the start of the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19719249907712
+    m_Localized: Character03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19720663388160
+    m_Localized: Gain Fireball at the start of the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19799696658432
+    m_Localized: Character04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19801714118656
+    m_Localized: Gain Holy Laser at the start of the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19861134823424
+    m_Localized: Character05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19862648967168
+    m_Localized: Gain Sword Energy at the start of the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20244473237504
+    m_Localized: POWER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20246796881920
+    m_Localized: Increase damage by 8%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20349049819136
+    m_Localized: SPELL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20350098395136
+    m_Localized: Increase duration by 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20379554992128
+    m_Localized: DUPLICATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20381253685248
+    m_Localized: Increase the number of projectiles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20493522620416
+    m_Localized: CLOVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20494780911616
+    m_Localized: Increase luck value
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20568474832896
+    m_Localized: ARMOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20569619877888
+    m_Localized: Reduce damage taken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20693855162368
+    m_Localized: CANDELABRA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20695222505472
+    m_Localized: Increase attack range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20751220658176
+    m_Localized: CROWN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20752474755072
+    m_Localized: Increase experience gained
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20855788851200
+    m_Localized: EMPTY TOME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20857198137344
+    m_Localized: Reduce weapon cooldown time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20920150446080
+    m_Localized: WINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20921492623360
+    m_Localized: Increase movement speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20975083245568
+    m_Localized: SPINACH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20979512430592
+    m_Localized: Restore health per second
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21617919053824
+    m_Localized: Novice Collector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21619496112128
+    m_Localized: Unlock 5 collectibles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21710558646272
+    m_Localized: Unlock 20 collectibles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21709245829120
+    m_Localized: Intermediate Collector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21751830597632
+    m_Localized: Unlock 100 collectibles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21750324842496
+    m_Localized: Advanced Collector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21834013790208
+    m_Localized: Goblin Hunter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21835444047872
+    m_Localized: Kill 10 Goblins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21996442406912
+    m_Localized: Kill 100 Goblins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22072342532096
+    m_Localized: Kill 1000 Goblins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21993762246656
+    m_Localized: Goblin Slayer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22069779812352
+    m_Localized: Goblin Terminator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22537641840640
+    m_Localized: Mad Forest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22551260745728
+    m_Localized: Dairy Plant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22615622340608
+    m_Localized: Cathedral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23329547407360
+    m_Localized: POWER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23341333401600
+    m_Localized: Increase Power/Might, up to a maximum of 25%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23423285907456
+    m_Localized: MUTI-SHOT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23424766496768
+    m_Localized: +1 projectile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23463580585984
+    m_Localized: GROWTH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23465568686080
+    m_Localized: Increase experience gain by 7%, up to a maximum of 14%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23533034065920
+    m_Localized: HEALTH BOOST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23533671600128
+    m_Localized: Increase maximum health, up to a maximum of 50%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23611425607680
+    m_Localized: WINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23612558069760
+    m_Localized: Increase movement speed, up to a maximum of 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23690509209600
+    m_Localized: EMPTY TOME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23691528425472
+    m_Localized: Reduce skill cooldown, up to a maximum of 15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23751175622656
+    m_Localized: GREED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23752652017664
+    m_Localized: Increase gold gain by 7%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23848005324800
+    m_Localized: LUCK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23848533807104
+    m_Localized: Increase luck. May find better items in-game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24059503104000
+    m_Localized: Powerful Fireball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24060044169216
+    m_Localized: Randomly fire fireballs around the player. Upgrade to increase the
+      number of fireballs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24109264326656
+    m_Localized: Holy Laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24109734088704
+    m_Localized: Holy Laser level +1. Increase the number of lasers every 2 levels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24175303643136
+    m_Localized: Love Arrow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24175932788736
+    m_Localized: Love Arrow +1 level. Gain +1 arrow every 2 levels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24260825501696
+    m_Localized: Guardian Aura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24261337206784
+    m_Localized: Guardian Aura +1 level. Gain +1 aura every 2 levels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24343373598720
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24343876915200
+    m_Localized: Armor +1%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24411572981760
+    m_Localized: Candelabra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24412709638144
+    m_Localized: Increase attack range by 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24492237836288
+    m_Localized: Clover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24493496127488
+    m_Localized: Increase luck by 20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24573875769344
+    m_Localized: Crown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24575306027008
+    m_Localized: Increase experience by 8%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24644998582272
+    m_Localized: Duplicate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24645501898752
+    m_Localized: Increase the number of projectiles by 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24707669872640
+    m_Localized: Empty Tome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24708177383424
+    m_Localized: Reduce cooldown by 5%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24828570685440
+    m_Localized: Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24829917057024
+    m_Localized: Increase damage by 8%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24871352586240
+    m_Localized: Spinach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24871885262848
+    m_Localized: Restore 0.2 health per second
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24943326842880
+    m_Localized: Spell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24944631271424
+    m_Localized: Increase duration by 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25008997060608
+    m_Localized: Wings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25010670587904
+    m_Localized: Increase movement speed by 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25069600559104
+    m_Localized: Sword Energy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25070431031296
+    m_Localized: Sword Energy level +1. Upgrade to increase range and count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25485478383616
+    m_Localized: SLASH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25486669565952
+    m_Localized: Perform a slashing attack in front of the player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25516319100928
+    m_Localized: None
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25557381337088
+    m_Localized: None
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25701224992768
+    m_Localized: None
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25810985734144
+    m_Localized: None
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25896360792064
+    m_Localized: None
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25555359682560
+    m_Localized: GURADIAN AURA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25556064325632
+    m_Localized: Orbiting damage that moves with the player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25699475968000
+    m_Localized: FIRE BALL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25700046393344
+    m_Localized: Randomly launch fireballs toward enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25808930525184
+    m_Localized: LOVE ARROW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25809765191680
+    m_Localized: Deal ranged damage with arrows
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25894796316672
+    m_Localized: HOLY LASER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25895266078720
+    m_Localized: Randomly fire lasers at surrounding enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31039445716992
+    m_Localized: Slime King
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31127039561728
+    m_Localized: Skeleton King
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31138649395200
+    m_Localized: Werewolf Leader
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31178398814208
+    m_Localized: Demon Lord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31268031090688
+    m_Localized: Goblin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31340680630272
+    m_Localized: Bat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31352860889088
+    m_Localized: Skeleton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31368912490496
+    m_Localized: Zombie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31417281204224
+    m_Localized: Ghost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31464391626752
+    m_Localized: Werewolf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31493164552192
+    m_Localized: Golem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31521299943424
+    m_Localized: Dragon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37714852499456
+    m_Localized: BUY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52870135336960
+    m_Localized: START
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76463560904704
+    m_Localized: VICTORY!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76465439952896
+    m_Localized: Game Over
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

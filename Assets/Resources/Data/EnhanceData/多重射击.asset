@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4914b87595b2c4c94f87a0cbdebd75, type: 3}
+  m_Name: "\u591A\u91CD\u5C04\u51FB"
+  m_EditorClassIdentifier: 
+  nameKey: Enhance_Count_Name
+  descKey: Enhance_Count_Desc
+  upgradeName: "\u591A\u91CD\u5C04\u51FB"
+  description: "\u6BCF\u7EA7+1\u6295\u5C04\u7269"
+  icon: {fileID: 21300000, guid: 9f69b220176e6964fbd87f5f158d45e3, type: 3}
+  maxLevel: 1
+  costPerLevel: e8030000
+  statType: 9
+  isPercentage: 0
+  baseValue: 1
+  upgradeType: 1
+  relatedWeapon: {fileID: 0}
+  relatedPassive: {fileID: 0}
+  statModifiers: []
+  baseWeight: 50
+  prerequisites: []
+  requiredLevel: 0
