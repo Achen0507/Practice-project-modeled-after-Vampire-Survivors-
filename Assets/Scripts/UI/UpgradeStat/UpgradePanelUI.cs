@@ -1,12 +1,13 @@
-using Survivor.Core;
 using Survivor.Data;
 using Survivor.Upgrades;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradePanelUI : MonoBehaviour
 {
+    /// <summary>
+    /// 升级3选1面板
+    /// </summary>
     public static UpgradePanelUI Instance { get; private set; }
 
     [Header("面板设置")]
@@ -41,7 +42,6 @@ public class UpgradePanelUI : MonoBehaviour
         }
         currentCards.Clear();
 
-        // 动态创建卡片
         foreach (var option in currentOptions)
         {
             GameObject cardObj = Instantiate(cardPrefab, cardContainer);
