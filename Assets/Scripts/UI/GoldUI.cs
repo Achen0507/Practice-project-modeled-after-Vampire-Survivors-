@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// ±¾¾Ö½ð±Ò
+    /// </summary>
     public class GoldUI : MonoBehaviour
     {
         private Text goldText;
