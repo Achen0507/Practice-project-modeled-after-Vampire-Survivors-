@@ -1,11 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Survivor.MainMenu
 {
+    /// <summary>
+    /// 游戏主页面
+    /// </summary>
     public class MainMenu : MonoBehaviour
     {
         [Header("金币")]
@@ -35,7 +37,6 @@ namespace Survivor.MainMenu
             if (PlayerPrefs.GetInt("OpenAchievement", 0) == 1)
             {
                 PlayerPrefs.SetInt("OpenAchievement", 0);
-                // 延迟一帧，确保面板都初始化好
                 StartCoroutine(OpenRecordPanelDelayed());
             }
         }
@@ -46,7 +47,6 @@ namespace Survivor.MainMenu
             if (recordPanel != null)
             {
                 recordPanel.SetActive(true);
-                // 同时关闭其他面板
                 CloseAllPanels();
                 recordPanel.SetActive(true);
             }
