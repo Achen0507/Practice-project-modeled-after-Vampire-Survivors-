@@ -1,11 +1,12 @@
 using Survivor.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// 本局游戏时长
+    /// </summary>
     public class GameTimer : MonoBehaviour
     {
         [SerializeField] private Text timerText;
@@ -31,7 +32,7 @@ namespace Survivor.UI
                 if (playerStats != null)
                 {
                     playerStats.WinGame();
-                    isRunning = false; // 停止计时
+                    isRunning = false; 
                 }
             }
         }
@@ -44,7 +45,6 @@ namespace Survivor.UI
             int seconds = Mathf.FloorToInt(elapsedTime % 60f);
 
             string display = $"{hours:00}:{minutes:00}:{seconds:00}";
-
             timerText.text = display; 
         }
 
