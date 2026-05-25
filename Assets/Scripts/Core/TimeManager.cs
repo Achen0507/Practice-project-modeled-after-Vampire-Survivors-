@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
+    /// <summary>
+    /// 管理暂停和继续游戏的时间管理器
+    /// </summary>
     public static TimeManager Instance { get; private set; }
 
     private int pauseCount = 0;
