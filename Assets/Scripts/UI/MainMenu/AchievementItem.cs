@@ -1,11 +1,12 @@
 using Survivor.Data;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// 成就从data动态生成
+    /// </summary>
     public class AchievementItem : MonoBehaviour
     {
         public Image icon;
