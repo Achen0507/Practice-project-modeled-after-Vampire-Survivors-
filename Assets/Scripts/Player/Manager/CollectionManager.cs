@@ -28,10 +28,6 @@ namespace Survivor.MainMenu
         private void Start()
         {
             LoadUnlockStatus();
-            foreach (var item in allItems)
-            {
-                Debug.Log($"藏品: {item.itemName}, 已解锁: {IsUnlocked(item)}");
-            }
         }
 
         private void LoadAllCollectionItems()
@@ -49,9 +45,6 @@ namespace Survivor.MainMenu
         public void UnlockItem(CollectionItem item) {
             if (item == null) return;
 
-            Debug.Log($"=== 解锁尝试 ===");
-            Debug.Log($"item.itemName: '{item.itemName}'");
-            Debug.Log($"unlockedStatus 中是否存在: {unlockedStatus.ContainsKey(item.itemName)}");
             if (unlockedStatus.ContainsKey(item.itemName))
             {
                 Debug.Log($"当前状态: {unlockedStatus[item.itemName]}");
@@ -65,12 +58,7 @@ namespace Survivor.MainMenu
 
             unlockedStatus[item.itemName] = true;
             item.isUnlock = true;
-
-            // 增加收藏点数
             GameManager.Instance?.AddCollectionPoints(item.collectionPointValue);
-
-            // 触发 UI 提示
-            Debug.Log($"收藏品已解锁: {item.itemName}");
             SaveUnlockStatus();
         }
 
@@ -96,7 +84,6 @@ namespace Survivor.MainMenu
                 int savedValue = PlayerPrefs.GetInt($"Unlocked_{item.itemName}", 0);
                 bool status = savedValue == 1;
                 unlockedStatus[item.itemName] = status;
-                Debug.Log($"加载收藏品 {item.itemName}: savedValue={savedValue}, status={status}");
             }
         }
 
@@ -104,7 +91,6 @@ namespace Survivor.MainMenu
             foreach (var item in allItems)
             {
                 PlayerPrefs.SetInt($"Unlocked_{item.itemName}", unlockedStatus[item.itemName] ? 1 : 0);
-                Debug.Log($"解锁收藏: {item.itemName}");
             }
             ;
             PlayerPrefs.Save();
