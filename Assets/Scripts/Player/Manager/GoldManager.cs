@@ -1,4 +1,3 @@
-using Survivor.Core;
 using Survivor.MainMenu;
 using UnityEngine;
 
@@ -32,7 +31,7 @@ public class GoldManager : MonoBehaviour
         MainMenu mainMenu = FindObjectOfType<MainMenu>();
         if (mainMenu != null) mainMenu.UpdateGoldUI();
     }
-    public void AddKill()  // ÐÂÔö
+    public void AddKill() 
     {
         totalKills++;
         SaveData();
