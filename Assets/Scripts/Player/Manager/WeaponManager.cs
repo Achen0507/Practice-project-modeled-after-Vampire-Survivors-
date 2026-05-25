@@ -32,13 +32,11 @@ namespace Survivor.Player
             RefreshWeaponList();
         }
 
-
         public void SetDamageTextPrefab(GameObject prefab, Transform canvas)
         {
             this.damageTextPrefab = prefab;
             this.canvasTransform = canvas;
 
-            // 传给所有武器
             foreach (var weapon in weapons)
             {
                 weapon.SetDamageTextPrefab(prefab);
@@ -52,7 +50,6 @@ namespace Survivor.Player
         public void RefreshWeaponList() {
             weapons.Clear();
             var found = GetComponentsInChildren<WeaponBase>(true);
-            Debug.Log($"找到 {found.Length} 个武器");
             foreach (var w in found)
             {
                 Debug.Log($"武器: {w.name}");
@@ -66,7 +63,6 @@ namespace Survivor.Player
         public void AddWeapon(WeaponBase weapon) {
             
             string weaponName = weapon.GetWeaponData().weaponName;
-            Debug.Log($"AddWeapon 被调用，武器数量: {weapons.Count + 1}");
             if (weapons.Contains(weapon)) return;
 
             weapons.Add(weapon);
@@ -78,10 +74,8 @@ namespace Survivor.Player
             {
                 CollectionManager.Instance?.UnlockItem(item);
             }
-
             AchievementManager.Instance?.AddProgress(AchievementType.WeaponsUnlocked, 1, weaponName);
 
-            // 添加时立即设置伤害数字预制体
             if (damageTextPrefab != null)
             {
                 weapon.SetDamageTextPrefab(damageTextPrefab);
@@ -92,12 +86,10 @@ namespace Survivor.Player
         private CollectionItem GetCollectionItemForWeapon(WeaponBase weapon)
         {
             string weaponName = weapon.GetWeaponData().weaponName;
-
             CollectionItem item = Resources.Load<CollectionItem>($"Data/CollectionData/{weaponName}");
 
             if (item == null)
             {
-                // 如果找不到，尝试遍历所有 CollectionItem
                 CollectionItem[] all = Resources.LoadAll<CollectionItem>("Data/CollectionData");
                 foreach (var ci in all)
                 {
@@ -105,12 +97,10 @@ namespace Survivor.Player
                     string cleanName = System.Text.RegularExpressions.Regex.Replace(ci.name, @"^\d+", "");
                     if (cleanName == weaponName)
                     {
-                        Debug.Log($"找到收藏品: {ci.name} -> {cleanName}");
                         return ci;
                     }
                 }
             }
-
             return item;
         }
 
@@ -128,7 +118,6 @@ namespace Survivor.Player
             if (weapon != null && weapons.Contains(weapon))
             {
                 weapon.Upgrade();
-                Debug.Log($"武器升级: {weapon.name} -> Lv.{weapon.GetCurrentLevel()}");
             }
         }
 
