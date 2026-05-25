@@ -1,6 +1,5 @@
 using Survivor.Combat;
 using Survivor.Data;
-using Survivor.MainMenu;
 using Survivor.Player;
 using UnityEngine;
 
@@ -24,7 +23,6 @@ public class GameInitializer : MonoBehaviour
         Transform canvasTransform = GameObject.Find("DamageTextCanvas")?.transform;
         WeaponManager.Instance.SetDamageTextPrefab(damageTextPrefab, canvasTransform);
 
-        // 直接赋值（不需要重新计算了！）
         PlayerAttributes.Instance.maxHealth = finalStats[StatType.MaxHealth];
         PlayerAttributes.Instance.healthRegen = finalStats[StatType.HealthRegen];
         PlayerAttributes.Instance.armor = finalStats[StatType.Armor];
@@ -39,13 +37,12 @@ public class GameInitializer : MonoBehaviour
         PlayerAttributes.Instance.growth = finalStats[StatType.Growth];
         PlayerAttributes.Instance.greed = finalStats[StatType.Greed];
 
-        // 保存原始值（用于重置）
+        // 保存原始值（用于每次重置）
         PlayerAttributes.Instance.SaveOriginalValues();
 
-        //  添加初始武器
+        //  添加角色初始武器
         if (!string.IsNullOrEmpty(selectedChar.starterWeaponName))
         {
-            // 通过名称加载 WeaponData
             WeaponData weaponData = Resources.Load<WeaponData>($"Data/WeaponData/{selectedChar.starterWeaponName}");
             if (weaponData != null)
             {
@@ -57,7 +54,7 @@ public class GameInitializer : MonoBehaviour
             }
         }
 
-        // 同步移速到 PlayerController,Attr和Controller不在同个物体
+        // 同步移速到 PlayerController,因为Attr和Controller不在同个物体上面
         PlayerController playerController = FindObjectOfType<PlayerController>();
         if (playerController != null)
         {
@@ -73,14 +70,12 @@ public class GameInitializer : MonoBehaviour
 
     private void AddWeapon(WeaponData data)
     {
-
         // 创建武器物体
         GameObject weaponObj = new GameObject(data.weaponName); 
         weaponObj.transform.SetParent(transform);  // 挂在 Player 下
 
         WeaponBase weapon = null;
 
-        // 根据武器名称添加对应脚本
         switch (data.weaponName)
         {
             case "爱之箭":
@@ -128,11 +123,9 @@ public class GameInitializer : MonoBehaviour
                 Destroy(weaponObj);
                 return;
         }
-
         // 设置武器数据
         weapon.SetWeaponData(data);
-        weapon.RecordFirstGetTime(Time.timeSinceLevelLoad);
-        // 添加到 WeaponManager
+        weapon.RecordFirstGetTime(Time.timeSinceLevelLoad);   //结算界面用
         WeaponManager.Instance.AddWeapon(weapon);
     }
 }
