@@ -1,7 +1,5 @@
-using Survivor.Combat;
 using Survivor.Core;
 using Survivor.Data;
-using Survivor.UI;
 using UnityEngine;
 
 namespace Survivor.Combat
@@ -60,16 +58,11 @@ namespace Survivor.Combat
             if (orbitObjects == null) return;
             if (playerTransform == null) return;
 
-            // 更新旋转
             currentAngle += rotationSpeed * Time.deltaTime;
 
             for (int i = 0; i < orbitObjects.Length; i++)
             {
-                if (orbitObjects[i] == null)
-                {
-                    Debug.LogError($"环绕物 {i} 被销毁了！");
-                    continue;
-                }
+                if (orbitObjects[i] == null) continue;
 
                 float angleOffset = (360f / orbitObjects.Length) * i;
                 float angle = currentAngle + angleOffset;
@@ -95,8 +88,6 @@ namespace Survivor.Combat
                     if (obj != null) Destroy(obj);
                 }
             }
-
-            // 重新创建
             CreateOrbitObjects();
         }
 
@@ -141,7 +132,6 @@ namespace Survivor.Combat
             weapon = w;
             index = idx;
         }
-
 
         private void OnTriggerStay2D(Collider2D collision)
         {
