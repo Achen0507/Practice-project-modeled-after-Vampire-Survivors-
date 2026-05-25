@@ -1,11 +1,12 @@
 using Survivor.Data;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Survivor.MainMenu
 {
+    /// <summary>
+    /// 强化页面道具动态生成
+    /// </summary>
     public class EnhanceItem : MonoBehaviour
     {
         [SerializeField] private Image icon;
