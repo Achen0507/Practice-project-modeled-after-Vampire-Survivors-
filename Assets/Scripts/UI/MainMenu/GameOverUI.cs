@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// 结算面板
+    /// </summary>
     public class GameOverUI : MonoBehaviour
     {
         public static GameOverUI Instance { get; private set; }
@@ -22,11 +25,11 @@ namespace Survivor.UI
         [SerializeField] private Text killText;
         [SerializeField] private Text levelText;
 
-        [Header("左侧道具列表")]
+        [Header("右侧道具列表")]
         [SerializeField] private Transform collectionContainer;
         [SerializeField] private GameObject collectionItemPrefab;
 
-        [Header("右侧武器")]
+        [Header("左侧武器")]
         [SerializeField] private Transform weaponContainer;
         [SerializeField] private GameObject weaponItemPrefab;
 
@@ -42,7 +45,6 @@ namespace Survivor.UI
                 return;
             }
             Instance = this;
-            Debug.Log("GameOverUI Instance 已设置");
         }
 
         private void Start()
@@ -73,17 +75,13 @@ namespace Survivor.UI
 
             if (isVictory)
                 AudioManager.Instance?.PlayVictoryMusic();
-            //else
-            //    AudioManager.Instance?.PlayDefeatMusic();
 
-            // 禁用所有敌人
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (var enemy in enemies)
             {
                 enemy.SetActive(false);
             }
 
-            // 暂停游戏
             Time.timeScale = 0f;
 
             timeText.text = FormatTime(stats.playTime);
@@ -148,7 +146,6 @@ namespace Survivor.UI
             return damage.ToString("F0");
         }
 
-
         private string FormatTime(float seconds)
         {
             int minutes = Mathf.FloorToInt(seconds / 60f);
@@ -180,7 +177,6 @@ namespace Survivor.UI
         public int kills;
         public int level;
     }
-
 
     [System.Serializable]
     public class CollectionRecord
