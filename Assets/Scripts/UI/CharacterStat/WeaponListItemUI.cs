@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// 局内武器等级和ui图标动态获取
+    /// </summary>
     public class WeaponListItemUI : MonoBehaviour
     {
         [Header("图标")]
@@ -12,7 +13,7 @@ namespace Survivor.UI
 
         [Header("等级方块")]
         [SerializeField] private Transform levelBlocksContainer;
-        [SerializeField] private GameObject blockPrefab;  // Image 预制体
+        [SerializeField] private GameObject blockPrefab;  
 
         public void Initialize(Sprite icon, int currentLevel)
         {
@@ -24,7 +25,6 @@ namespace Survivor.UI
 
         private void CreateBlocks(int count)
         {
-            // 清除旧方块
             foreach (Transform child in levelBlocksContainer)
             {
                 Destroy(child.gameObject);
