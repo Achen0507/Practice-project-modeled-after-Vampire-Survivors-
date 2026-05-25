@@ -1,12 +1,13 @@
 using Survivor.Core;
 using Survivor.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ExpBarUI : MonoBehaviour
 {
+    /// <summary>
+    /// 最上面exp提示
+    /// </summary>
     [SerializeField] private Slider expSlider;
     [SerializeField] private Text levelText;
 
