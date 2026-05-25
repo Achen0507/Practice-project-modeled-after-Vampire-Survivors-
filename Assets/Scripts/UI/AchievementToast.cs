@@ -1,13 +1,14 @@
 using DG.Tweening;
 using Survivor.Data;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// ³É¾Íµ¯´°
+    /// </summary>
     public class AchievementToast : MonoBehaviour
     {
         [Header("UI")]
