@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Survivor.Data
 {
+    /// <summary>
+    /// 管理被动技能的data
+    /// </summary>
+    
     [CreateAssetMenu(fileName = "New Passive", menuName = "Survivor/Passive Data")]
     public class PassiveData : ScriptableObject
     {
@@ -16,10 +18,10 @@ namespace Survivor.Data
         public Sprite icon;
 
         [Header("属性")]
-        public StatType statType;           // 影响哪个属性
+        public StatType statType;           
         public float baseValue;              // 第1级的值
         public float growthPerLevel;         // 每级增长
-        public bool isPercentage;            // 是否百分比
+        public bool isPercentage;            
 
         [Header("限制")]
         public int maxLevel = 100;
