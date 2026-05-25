@@ -1,12 +1,13 @@
 using Survivor.Data;
-using Survivor.Upgrades;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 namespace Survivor.MainMenu
 {
+    /// <summary>
+    /// Ç¿»¯Ò³Ãæ
+    /// </summary>
     public class EnhanceUI : MonoBehaviour
     {
         public static EnhanceUI Instance { get; private set; }
