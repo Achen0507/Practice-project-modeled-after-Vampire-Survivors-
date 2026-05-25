@@ -12,8 +12,7 @@ namespace Survivor.Combat
     public class WhipWeapon : WeaponBase
     {
         [Header("剑气配置")]
-        [SerializeField] private GameObject slashPrefab;     // 剑气预制体
-        [SerializeField] private float baseRange = 1.5f;      
+        [SerializeField] private GameObject slashPrefab;     // 剑气预制体   
         [SerializeField] private float baseWidth = 0.8f;     
         [SerializeField] private float effectDuration = 0.4f;
 
