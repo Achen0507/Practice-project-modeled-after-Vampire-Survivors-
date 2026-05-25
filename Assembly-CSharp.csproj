@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Combat\WhipWeapon.cs" />
     <Compile Include="Assets\Resources\SlashPrefab\Slash Effects FREE\Scripts\Prefab Manager.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\AchievementItem.cs" />
+    <Compile Include="Assets\Scripts\TestManager.cs" />
     <Compile Include="Assets\Scripts\Core\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Data\AchievementData.cs" />
     <Compile Include="Assets\Scripts\Data\WeaponData.cs" />
@@ -128,7 +129,6 @@
     <Compile Include="Assets\Scripts\Upgrades\UpgradeManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Core\GameEvents.cs" />
-    <Compile Include="Assets\Scripts\TestManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Credits_zh.txt" />

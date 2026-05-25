@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace Survivor.Cam
-{
+{  
     public class CameraFollow : MonoBehaviour
     {
         public Tilemap groundTilemap;
 
         [SerializeField] private Transform target;    
-        [SerializeField] private Vector3 offset = new Vector3(0, 0, -10);  // 相机偏移
-        [SerializeField] private float smoothSpeed = 5f;  // 跟随平滑度
+        [SerializeField] private Vector3 offset = new Vector3(0, 0, -10);  // main相机偏移
+        [SerializeField] private float smoothSpeed = 5f;  // 相机跟随平滑度
 
         private float minX, maxX, minY, maxY;
         private bool hasBounds = false;
