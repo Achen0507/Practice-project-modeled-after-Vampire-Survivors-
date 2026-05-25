@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -36,11 +34,10 @@ namespace Survivor.Player
         }
         private void Update()
         {
-            // 获取输入
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
 
-            // 归一化（防止对角线移动更快）
+            // 归一化
             if (moveInput.magnitude > 1f)
                 moveInput.Normalize();
 
