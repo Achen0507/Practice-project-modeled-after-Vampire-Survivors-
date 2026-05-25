@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -26,10 +25,10 @@ namespace Survivor.Combat
                 Transform target = GetNearestEnemy();
                 if (target != null)
                 {
-                    // 基础方向（指向最近敌人）
+                    // 指向最近敌人
                     Vector2 baseDirection = (target.position - playerTransform.position).normalized;
 
-                    // 关键：在这个方向上加上一个随机旋转（-45° 到 45°）
+                    // 加上一个随机旋转（-45° 到 45°），效果更像魔法球
                     float randomAngle = Random.Range(-45f, 45f);
                     Vector2 finalDirection = Quaternion.Euler(0, 0, randomAngle) * baseDirection;
 
@@ -87,7 +86,7 @@ namespace Survivor.Combat
                 int idx = Mathf.Min(GetCurrentLevel() - 1, weaponData.shotPatterns.Length - 1);
                 weaponLevelCount = weaponData.shotPatterns[idx].projectileCount;
             }
-            // 全局加成（复制器等）
+            // 全局加成（被动复制器等）
             int globalBonus = GetProjectileCount() - 1;
             return Mathf.Max(1, weaponLevelCount + globalBonus);
         }
