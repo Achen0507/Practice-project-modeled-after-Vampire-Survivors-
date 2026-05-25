@@ -9,6 +9,9 @@ using UnityEngine.UI;
 
 namespace Survivor.MainMenu
 {
+    /// <summary>
+    /// 选人页面
+    /// </summary>
     public class CharacterSelectUI : MonoBehaviour
     {
         [Header("主菜单按钮")]
@@ -57,7 +60,6 @@ namespace Survivor.MainMenu
 
         private List<CharacterData> characters;
         private List<MapData> maps;
-
         private CharacterData currentCharacter;
         private MapData currentMap;
         private List<Toggle> mapToggles = new List<Toggle>();
@@ -73,7 +75,6 @@ namespace Survivor.MainMenu
             InitCharacterList();
             InitMapList();
 
-            // 默认选中第一个
             if (characters.Count > 0)
                 SelectCharacter(0);
             if (maps.Count > 0)
@@ -84,7 +85,6 @@ namespace Survivor.MainMenu
 
         private void LoadAllCharacters()
         {
-            // 从 Resources/Characters 文件夹加载所有角色数据
             CharacterData[] loaded = Resources.LoadAll<CharacterData>("Data/CharacterData");
             System.Array.Sort(loaded, (a, b) => a.name.CompareTo(b.name));
             characters = new List<CharacterData>(loaded);
@@ -135,8 +135,6 @@ namespace Survivor.MainMenu
 
             PlayerAttributes.Instance.ResetToBase();  //attr不累加 dondestroy
 
-
-            // 只刷新显示，不修改属性
             if (currentCharacter != null)
             {
                 UpdateStatPanel(currentCharacter);
@@ -181,7 +179,6 @@ namespace Survivor.MainMenu
                     nameEvent.StringReference.TableReference = "UIText";
                     nameEvent.StringReference.TableEntryReference = characters[i].nameKey;
                 }
-
                 btn.onClick.AddListener(() => SelectCharacter(index));
             }
         }
@@ -216,7 +213,6 @@ namespace Survivor.MainMenu
 
                 mapToggles.Add(toggle);
 
-                // 默认选中第一个
                 if (i == 0) toggle.isOn = true;
             }
         }
@@ -249,8 +245,6 @@ namespace Survivor.MainMenu
                     Debug.LogError($"找不到武器数据: {currentCharacter.starterWeaponName}");
                 }
             }
-
-            // 更新左侧属性面板
             UpdateStatPanel(currentCharacter);
         }
 
@@ -270,7 +264,7 @@ namespace Survivor.MainMenu
                 return new StatModifier { statType = type, value = 0, isPercentage = false };
             }
 
-            // 局外加成,局外的value*等级
+            // 局外加成
             StatModifier GetEnhanceBonus(StatType type)
             {
                 float value = EnhanceManager.Instance?.GetTotalBonus(type) ?? 0;
@@ -285,18 +279,17 @@ namespace Survivor.MainMenu
 
             float CalculateFinalValue(float baseValue, StatModifier charBonus, StatModifier enhanceBonus)
             {
-                // 特殊处理：基础值为0，且有百分比加成
                 if (baseValue == 0 && (charBonus.isPercentage || enhanceBonus.isPercentage))
                 {
                     float total = 0;
 
-                    // 角色加成（百分比）
+                    // 角色加成
                     if (charBonus.isPercentage)
                         total += charBonus.value * 100f;
                     else
-                        total += charBonus.value;  // 固定值加成，但这里 charBonus.value 通常是 0
+                        total += charBonus.value; 
 
-                    // 局外加成（百分比）
+                    // 局外加成
                     if (enhanceBonus.isPercentage)
                         total += enhanceBonus.value * 100f;
                     else
@@ -322,7 +315,7 @@ namespace Survivor.MainMenu
             }
 
 
-            // 基础值从 baseStats 读取（重要！）
+            // 基础值从 baseStats 读取
             float baseHealth = baseStats.maxHealth;
             float baseRegen = baseStats.healthRegen;
             float baseArmor = baseStats.armor;
@@ -416,8 +409,6 @@ namespace Survivor.MainMenu
 
             float finalGreed = CalculateFinalValue(baseGreed, charGreed, enhanceGreed); 
             greedText.text = $"{finalGreed:F0}%";
-
-
         }
 
         private void OnConfirm()
@@ -425,30 +416,26 @@ namespace Survivor.MainMenu
             if (currentCharacter == null) return;
             if (currentMap == null) return;
 
-            // 保存选中的角色和地图
             GameManager.Instance.SelectedCharacter = currentCharacter;
             GameManager.Instance.SelectedMap = currentMap;
 
             var finalStats = GetCurrentFinalStats();
             GameManager.Instance.FinalCharacterStats = finalStats;
 
-            // 加载游戏场景
             SceneManager.LoadScene(currentMap.sceneName);
 
         }
-        // 直接从 Text 组件读取已经计算好的值
+
         private Dictionary<StatType, float> GetCurrentFinalStats()
         {
             var stats = new Dictionary<StatType, float>();
 
-            // 安全解析函数
             float SafeParse(Text text, params string[] removeStrings)
             {
                 if (text == null || string.IsNullOrEmpty(text.text)) return 0;
 
                 string raw = text.text;
 
-                // 移除指定的字符串
                 foreach (string remove in removeStrings)
                 {
                     raw = raw.Replace(remove, "");
@@ -457,7 +444,6 @@ namespace Survivor.MainMenu
                 // 移除所有非数字、小数点和负号的字符
                 string numberOnly = System.Text.RegularExpressions.Regex.Replace(raw, @"[^0-9.-]", "");
 
-                // 尝试解析
                 if (float.TryParse(numberOnly, System.Globalization.NumberStyles.Float,
                     System.Globalization.CultureInfo.InvariantCulture, out float result))
                 {
