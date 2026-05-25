@@ -30,7 +30,6 @@ namespace Survivor.Combat
 
         public void Initialize(Vector2 dir, float dmg, float rng, Vector3 pos)
         {
-
             direction = dir.normalized;
             damage = dmg;
             range = rng;
@@ -90,7 +89,6 @@ namespace Survivor.Combat
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (PlayerPrefs.GetInt("DamageNumber", 1) == 0) return;
-
             if (collision.CompareTag("Player")) return;
 
             IDamageable damageable = collision.GetComponent<IDamageable>();
