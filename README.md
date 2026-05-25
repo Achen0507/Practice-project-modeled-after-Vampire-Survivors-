@@ -12,8 +12,8 @@
 - ESC键暂停，TAB键可以随时查看角色属性
   
 ## 开发环境
-Unity 2020.3.48f1c1
-Visual Studio 2022
+- Unity 2020.3.48f1c1
+- Visual Studio 2022
 
 ## 资源说明
 - 项目实现了选人，成就，收藏，强化功能。
