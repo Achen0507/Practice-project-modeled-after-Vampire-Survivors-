@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 namespace Survivor.MainMenu
 {
+    /// <summary>
+    /// 制作团队，放着
+    /// </summary>
     public class CreditsUI : MonoBehaviour
     {
         [Header("面板")]
@@ -26,7 +29,6 @@ namespace Survivor.MainMenu
 
         public void OpenPanel()
         {
-            Debug.Log("OpenPanel 被调用");
             quitButton.gameObject.SetActive(false);
             startButton.gameObject.SetActive(false);
             optionButton.gameObject.SetActive(false);
@@ -46,12 +48,9 @@ namespace Survivor.MainMenu
             string fileName = isChinese ? "Credits_zh" : "Credits_en";
             TextAsset textAsset = Resources.Load<TextAsset>(fileName);
 
-            Debug.Log($"加载文件: {fileName}, 内容长度: {(textAsset != null ? textAsset.text.Length : 0)}");
-
             if (textAsset != null && creditsText != null)
             {
                 creditsText.text = textAsset.text;
-                Debug.Log($"设置文本: {creditsText.text.Substring(0, Mathf.Min(50, creditsText.text.Length))}");
             }
         }
 
