@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// ±¾¾Ö»÷É±
+    /// </summary>
     public class KillUI : MonoBehaviour
     {
         private Text killText;
