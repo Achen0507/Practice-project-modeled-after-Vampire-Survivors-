@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 namespace Survivor.MainMenu
 {
+    /// <summary>
+    /// option面板
+    /// </summary>
     public class OptionsMenu : MonoBehaviour
     {
         [Header("面板")]
@@ -47,7 +50,6 @@ namespace Survivor.MainMenu
 
         private void Start()
         {
-            // 加载保存的设置
             LoadSettings();
 
             int savedLang = PlayerPrefs.GetInt("Language", 0);
@@ -58,7 +60,7 @@ namespace Survivor.MainMenu
             }  //Language 保存的值：0 = 中文，1 = 英文
 
 
-            // 绑定 Tab 切换
+            // 绑定左侧图标切换
             collectionTab.onClick.AddListener(() => ShowContent(ContentType.Collection));
             displayTab.onClick.AddListener(() => ShowContent(ContentType.Display));
             soundTab.onClick.AddListener(() => ShowContent(ContentType.Sound));
@@ -240,11 +242,11 @@ namespace Survivor.MainMenu
         {
             PlayerPrefs.SetInt("Border", index);
 
-            if (index == 1) // 无边框
+            if (index == 1) 
             {
                 Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
             }
-            else // 有边框
+            else 
             {
                 // 恢复之前保存的窗口模式
                 int windowMode = PlayerPrefs.GetInt("WindowMode", 0);
