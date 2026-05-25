@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Survivor.Data
 {
+    /// <summary>
+    /// 管理成就的data
+    /// </summary>
+    
     [CreateAssetMenu(fileName = "New Achievement", menuName = "Survivor/Achievement")]
     public class AchievementData : ScriptableObject
     {
-        public string nameKey;      // 本地化 Key
-        public string descKey;      // 本地化 Key
+        public string nameKey;      // 本地化 Key -汉化用
+        public string descKey;      // 本地化 Key -汉化用
 
         public string achievementName;
         public string description;
