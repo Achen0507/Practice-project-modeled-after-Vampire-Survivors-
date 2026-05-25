@@ -2,7 +2,6 @@ using Survivor.Data;
 using System;
 using UnityEngine;
 
-
 namespace Survivor.Core
 {
     /// <summary>
