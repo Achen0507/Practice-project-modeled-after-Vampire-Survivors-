@@ -9,7 +9,7 @@ namespace Survivor.Combat
     /// <summary>
     /// 武器基类 - 所有武器的父类
     /// </summary>
-    public abstract class WeaponBase : MonoBehaviour  //abstract类不能直接使用（不能 new WeaponBase()），只能作为模板被其他类继承
+    public abstract class WeaponBase : MonoBehaviour
     {
         [Header("武器配置")]
         [SerializeField] protected WeaponData weaponData;
@@ -54,29 +54,7 @@ namespace Survivor.Combat
 
             if (EnemyManager.Instance == null) return;
 
-            //// 获取所有敌人（后续改为从敌人生成器管理）
-            //GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            //
-            //float closestDistance = GetCurrentRange();
-            //IDamageable closestEnemy = null;
-            //
-            //foreach (GameObject enemyObj in enemies) {
-            //    IDamageable enemy = enemyObj.GetComponent<IDamageable>();
-            //    Debug.Log($"检查敌人: {enemyObj.name}, IsAlive: {enemy?.IsAlive}");
-            //
-            //    if (enemy == null || !enemy.IsAlive) continue;
-            //
-            //    float distance = Vector2.Distance(playerTransform.position, enemy.Transform.position);
-            //    if (distance < closestDistance) {
-            //        closestDistance = distance;
-            //        closestEnemy = enemy;
-            //    }
-            //}
-            //
-            //currentTarget = closestEnemy;
-
             // 使用 EnemyManager 快速获取最近敌人 
-            // 获取最近的敌人（不限制距离）
             currentTarget = EnemyManager.Instance?.GetNearestEnemy(playerTransform.position);
 
             if (currentTarget != null) {
@@ -91,7 +69,7 @@ namespace Survivor.Combat
         /// <summary>
         /// 攻击方法 - 子类实现具体攻击逻辑
         /// </summary>
-        protected abstract void Attack();  //子类必须自己实现,因为不是虚方法
+        protected abstract void Attack(); 
 
         /// <summary>
         /// 获取当前冷却时间（已应用等级加成）
@@ -106,7 +84,7 @@ namespace Survivor.Combat
         /// 获取当前攻击范围（已应用等级加成）
         /// </summary>
         protected virtual float GetCurrentRange() {
-            float baseRange =weaponData?.baseRange ?? 5f;
+            float baseRange = weaponData?.baseRange ?? 5f;
             float bonus = PlayerAttributes.Instance?.attackRange ?? 0f;
             return baseRange + bonus;
         }
@@ -122,7 +100,7 @@ namespace Survivor.Combat
             float finalDamage = baseDamage * multiplier;
 
             // 随机波动 ±10%（波动范围可配置）
-            float randomFactor = Random.Range(0.8f, 1.2f);  // 0.9~1.1 倍
+            float randomFactor = Random.Range(0.8f, 1.2f); 
             finalDamage = finalDamage * randomFactor;
 
             return Mathf.Max(1f, finalDamage);
@@ -161,19 +139,14 @@ namespace Survivor.Combat
             if (PlayerPrefs.GetInt("DamageNumber", 1) == 0) return;
 
             GameObject canvas = GameObject.Find("DamageTextCanvas");
-
-
             Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-
             GameObject obj = Instantiate(damageTextPrefab, screenPos, Quaternion.identity, canvas.transform);
-
             DamageText dt = obj.GetComponent<DamageText>();
             if (dt != null)
             {
                 dt.Initialize(damage, false);
             }
         }
-
 
         /// <summary>
         /// 升级武器
@@ -193,22 +166,22 @@ namespace Survivor.Combat
             weaponData = data;
         }
 
-        public WeaponData GetWeaponData() => weaponData;
-        public void AddDamage(float damage) => totalDamage += damage;
-        public float GetTotalDamage() => totalDamage;
-
-        public void RecordFirstGetTime(float gameTime)
+        public void RecordFirstGetTime(float gameTime)   //结算界面用
         {
             if (firstGetTime < 0)
                 firstGetTime = gameTime;
         }
-        public string GetFirstGetTimeString()
+        public string GetFirstGetTimeString()  //结算界面用
         {
             if (firstGetTime < 0) return "--:--";
             int minutes = Mathf.FloorToInt(firstGetTime / 60f);
             int seconds = Mathf.FloorToInt(firstGetTime % 60f);
             return $"{minutes:00}:{seconds:00}";
         }
+
+        public WeaponData GetWeaponData() => weaponData;
+        public void AddDamage(float damage) => totalDamage += damage;
+        public float GetTotalDamage() => totalDamage;
 
     }
 }
