@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Survivor.UI
 {
+    /// <summary>
+    /// 局内esc暂停面板
+    /// </summary>
     public class PauseMenu : MonoBehaviour
     {
         [Header("面板")]
